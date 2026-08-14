@@ -6,6 +6,7 @@ import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
+import { getProducts } from "../shopify";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 
@@ -36,6 +37,29 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   registerStorageProxy(app);
   registerOAuthRoutes(app);
+  const escapeXml = (value: string) => value.replace(/[<>&'\"]/g, character => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[character] || character));
+  const canonicalOrigin = (req: express.Request) => (process.env.CANONICAL_ORIGIN || `${req.protocol}://${req.get("host")}`).replace(/\/$/, "");
+  app.get("/robots.txt", (req, res) => {
+    const origin = canonicalOrigin(req);
+    res.type("text/plain").send(`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
+  });
+  app.get("/sitemap.xml", async (req, res) => {
+    try {
+      const origin = canonicalOrigin(req);
+      const products = await getProducts();
+      const collections = ["sleep-hygiene", "comfort-bedding", "natural-home-comfort", "wellness-mindfulness", "baby-nursery"];
+      const urls = [
+        `${origin}/`,
+        ...collections.map(slug => `${origin}/collections/${slug}`),
+        ...products.map(product => `${origin}/products/${product.handle}`),
+      ];
+      const body = urls.map(url => `<url><loc>${escapeXml(url)}</loc></url>`).join("");
+      res.type("application/xml").send(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${body}</urlset>`);
+    } catch (error) {
+      console.error("[Sitemap] Live Shopify catalogue fetch failed", error);
+      res.status(503).type("application/xml").send("<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" />");
+    }
+  });
   // tRPC API
   app.use(
     "/api/trpc",

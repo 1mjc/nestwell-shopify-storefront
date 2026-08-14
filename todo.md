@@ -1,0 +1,38 @@
+# Project TODO
+
+- [x] Connect the headless storefront to the existing Shopify store at kjir11-dn.myshopify.com through the project integration.
+- [x] Diagnose and resolve the Shopify integration authorization flow that refreshes instead of opening Shopify.
+- [x] Resolve the repeated existing-store connection failure without requiring a development-store replacement.
+- [x] Complete Shopify account verification outside the CAPTCHA loop, then retry the standard existing-store integration.
+- [x] Create the exact five required collection experiences: Sleep Hygiene, Comfort & Bedding, Natural Home Comfort, Wellness & Mindfulness, and Baby & Nursery.
+- [x] Build a premium Nestwell homepage with brand storytelling, featured collections, bestseller discovery, and trust-focused messaging.
+- [x] Implement persistent navigation, collection mega-menu, instant catalogue search, and a cart item count.
+- [x] Implement live Storefront API product, collection, variant, availability, and checkout interactions.
+- [x] Wire the validated Shopify Headless private credential into the project’s server-side Shopify client for live kjir11-dn.myshopify.com data.
+- [x] Add a project-level live Shopify query proof beyond the standalone credential test.
+- [x] Add an automated project-level integration test that exercises the Nestwell Shopify router and asserts live catalogue data is returned.
+- [x] Document the project-level Shopify query verification path and result in the project.
+- [ ] Create filterable collection grids with price, rating, and availability controls plus loading states.
+- [ ] Build product pages with zoomable gallery, variants, detailed descriptions, specifications, FAQs, related products, breadcrumbs, and conversion-focused add-to-cart flow.
+- [x] Implement a cart drawer with editable quantities, removals, and Shopify checkout redirect.
+- [x] Add product and collection SEO metadata, semantic content, canonical tags, JSON-LD, and crawler-oriented product information architecture.
+- [ ] Create a secure admin SEO assistant to generate and improve product descriptions and metadata through an LLM.
+- [x] Add automated tests for catalogue utilities, cart behavior, and SEO content generation.
+- [ ] Validate responsive layouts, accessible interactions, loading behavior, and key storefront routes.
+- [ ] Document the completed storefront and operating workflow.
+- [x] Normalize Shopify cart line connections so newly added live cart items render in the drawer.
+- [ ] Implement a live, documented rating source for collection filtering without fabricating customer feedback.
+- [ ] Fix product-page quantity handling so the selected quantity is passed to Shopify when adding to cart.
+- [ ] Extract product-specific specifications and FAQ candidates from factual Shopify data for richer PDP detail sections.
+- [ ] Re-run browser validation for collection filtering and multi-quantity add-to-cart behavior.
+- [x] Split the authenticated SEO studio from the public storefront bundle to improve initial catalogue load performance.
+- [x] Include shared product-fact and SEO utility tests in the automated Vitest suite.
+- [x] Add explicit automated SEO helper tests for canonical metadata and fact-bound SEO drafting behavior.
+- [x] Add schema-handling coverage for the SEO draft generation response path.
+- [x] Broaden factual product-detail extraction across representative live Shopify descriptions.
+- [x] Correct the SEO studio route so the advertised admin entry point resolves instead of returning 404.
+- [x] Convert public home, collection, and product routes to server-rendered Shopify content with canonical and Open Graph metadata.
+- [x] Fix the SSR development entry-script cache-buster so Vite receives a valid module URL.
+- [ ] Prioritize factual shopper-readable prose over raw supplier specification dumps in product-page summaries.
+- [ ] Validate authenticated SEO-studio draft generation for a real Shopify product from the browser UI.
+- [ ] Run and document a complete QA pass covering responsive layouts, accessible controls, loading/error states, search, cart, and public route behavior.

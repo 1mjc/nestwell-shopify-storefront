@@ -12,19 +12,20 @@
 - [x] Add a project-level live Shopify query proof beyond the standalone credential test.
 - [x] Add an automated project-level integration test that exercises the Nestwell Shopify router and asserts live catalogue data is returned.
 - [x] Document the project-level Shopify query verification path and result in the project.
-- [ ] Create filterable collection grids with price, rating, and availability controls plus loading states.
-- [ ] Build product pages with zoomable gallery, variants, detailed descriptions, specifications, FAQs, related products, breadcrumbs, and conversion-focused add-to-cart flow.
+- [x] Create filterable collection grids with price, rating, and availability controls plus loading states.
+- [x] Build product pages with zoomable gallery, variants, detailed descriptions, specifications, FAQs, related products, breadcrumbs, and conversion-focused add-to-cart flow.
 - [x] Implement a cart drawer with editable quantities, removals, and Shopify checkout redirect.
 - [x] Add product and collection SEO metadata, semantic content, canonical tags, JSON-LD, and crawler-oriented product information architecture.
-- [ ] Create a secure admin SEO assistant to generate and improve product descriptions and metadata through an LLM.
+- [x] Create a secure admin SEO assistant to generate and improve product descriptions and metadata through an LLM.
 - [x] Add automated tests for catalogue utilities, cart behavior, and SEO content generation.
-- [ ] Validate responsive layouts, accessible interactions, loading behavior, and key storefront routes.
-- [ ] Document the completed storefront and operating workflow.
+- [x] Validate responsive layouts, accessible interactions, loading behavior, and key storefront routes.
+- [x] Document the completed storefront and operating workflow.
 - [x] Normalize Shopify cart line connections so newly added live cart items render in the drawer.
-- [ ] Implement a live, documented rating source for collection filtering without fabricating customer feedback.
-- [ ] Fix product-page quantity handling so the selected quantity is passed to Shopify when adding to cart.
-- [ ] Extract product-specific specifications and FAQ candidates from factual Shopify data for richer PDP detail sections.
-- [ ] Re-run browser validation for collection filtering and multi-quantity add-to-cart behavior.
+- [x] Implement a live, documented rating source for collection filtering without fabricating customer feedback.
+- [x] Fix product-page quantity handling so the selected quantity is passed to Shopify when adding to cart.
+- [x] Extract product-specific specifications and FAQ candidates from factual Shopify data for richer PDP detail sections.
+- [x] Re-run browser validation for collection filtering and multi-quantity add-to-cart behavior.
+- [x] Apply and verify live price and availability filters in a collection grid before closing the browser QA pass.
 - [x] Split the authenticated SEO studio from the public storefront bundle to improve initial catalogue load performance.
 - [x] Include shared product-fact and SEO utility tests in the automated Vitest suite.
 - [x] Add explicit automated SEO helper tests for canonical metadata and fact-bound SEO drafting behavior.
@@ -33,6 +34,12 @@
 - [x] Correct the SEO studio route so the advertised admin entry point resolves instead of returning 404.
 - [x] Convert public home, collection, and product routes to server-rendered Shopify content with canonical and Open Graph metadata.
 - [x] Fix the SSR development entry-script cache-buster so Vite receives a valid module URL.
-- [ ] Prioritize factual shopper-readable prose over raw supplier specification dumps in product-page summaries.
-- [ ] Validate authenticated SEO-studio draft generation for a real Shopify product from the browser UI.
-- [ ] Run and document a complete QA pass covering responsive layouts, accessible controls, loading/error states, search, cart, and public route behavior.
+- [x] Prioritize factual shopper-readable prose over raw supplier specification dumps in product-page summaries.
+- [x] Validate authenticated SEO-studio draft generation for a real Shopify product from the browser UI.
+- [x] Diagnose and resolve the SEO Studio draft request that remains in its loading state for the live AuraSleep product.
+- [x] Run and document a complete QA pass covering responsive layouts, accessible controls, loading/error states, search, cart, and public route behavior.
+- [x] Add a collection-query error state and make the empty-state reset clear every active filter, including rating.
+- [x] Resolve the public-route SSR Suspense fallback and eliminate related hydration warnings before final QA sign-off.
+- [x] Re-run and document the final public-route, responsive, accessibility, and error-state QA after the remediation work.
+- [x] Capture and document fresh desktop and mobile public-route QA after the SSR and collection-state fixes.
+- [x] Add automated render coverage for the collection loading-error state and its retry control before final checkpointing.

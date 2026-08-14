@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseSeoDraftResponse } from "./seoDraft";
+import { extractCompletionText, parseSeoDraftResponse } from "./seoDraft";
 
 const validDraft = {
   shopperTitle: "Soft Bamboo Pillowcase",
@@ -20,5 +20,9 @@ describe("SEO draft response validation", () => {
 
   it("rejects an incomplete or non-schema draft response", () => {
     expect(() => parseSeoDraftResponse(JSON.stringify({ shopperTitle: "Only a title" }))).toThrow();
+  });
+
+  it("extracts structured text content returned by the model proxy", () => {
+    expect(extractCompletionText([{ type: "text", text: JSON.stringify(validDraft) }])).toContain("Soft Bamboo Pillowcase");
   });
 });

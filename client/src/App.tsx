@@ -2,16 +2,14 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartDrawer } from "@/components/storefront";
 import { CartProvider } from "@/contexts/CartContext";
+import AdminSeo from "@/pages/AdminSeo";
 import CollectionPage from "@/pages/CollectionPage";
 import NotFound from "@/pages/NotFound";
 import ProductPage from "@/pages/ProductPage";
 import { Route, Switch } from "wouter";
-import { lazy, Suspense } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
-const AdminSeo = lazy(() => import("@/pages/AdminSeo"));
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -44,9 +42,7 @@ function App() {
         <TooltipProvider>
           <CartProvider>
             <Toaster />
-            <Suspense fallback={<div className="route-loading">Preparing Nestwell…</div>}>
-              <Router />
-            </Suspense>
+            <Router />
             <CartDrawer />
           </CartProvider>
         </TooltipProvider>

@@ -1,4 +1,4 @@
-import { invokeLLM } from "./_core/llm";
+import { invokeLLM, type InvokeResult } from "./_core/llm";
 import type { StorefrontProduct } from "./shopify";
 import { z } from "zod";
 
@@ -95,10 +95,15 @@ export function parseSeoDraftResponse(content: string): SeoDraft {
   return seoDraftSchema.parse(JSON.parse(content));
 }
 
+export function extractCompletionText(content: InvokeResult["choices"][number]["message"]["content"]) {
+  if (typeof content === "string") return content;
+  return content.filter(part => part.type === "text").map(part => part.text).join("");
+}
+
 export async function generateSeoDraft(product: StorefrontProduct): Promise<SeoDraft> {
   const result = await invokeLLM({
     model: "gpt-5-mini",
-    maxTokens: 1800,
+    maxCompletionTokens: 1800,
     messages: [
       {
         role: "system",
@@ -108,7 +113,7 @@ export async function generateSeoDraft(product: StorefrontProduct): Promise<SeoD
     ],
     outputSchema: { name: "nestwell_seo_draft", strict: true, schema },
   });
-  const content = result.choices[0]?.message.content;
-  if (typeof content !== "string") throw new Error("SEO assistant returned no text");
+  const content = extractCompletionText(result.choices[0]?.message.content ?? "");
+  if (!content.trim()) throw new Error("SEO assistant returned no text");
   return parseSeoDraftResponse(content);
 }

@@ -34,9 +34,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cartId, setCartId] = useState<string | null>(null);
   const [cart, setCart] = useState<Cart | null>(null);
   const [open, setOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const utils = trpc.useUtils();
 
   useEffect(() => {
+    setIsClient(true);
     setCartId(window.localStorage.getItem(CART_STORAGE_KEY));
   }, []);
 
@@ -58,7 +60,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const value = useMemo<CartContextValue>(() => ({
     cart,
-    busy: create.isPending || addLine.isPending || update.isPending || cartQuery.isFetching,
+    busy: isClient && (create.isPending || addLine.isPending || update.isPending || cartQuery.isFetching),
     open,
     setOpen,
     addProduct: (product, variantId, quantity = 1) => {
@@ -76,7 +78,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     checkout: () => {
       if (cart?.checkoutUrl) window.location.assign(cart.checkoutUrl);
     },
-  }), [addLine, cart, cartId, cartQuery.isFetching, create, open, update]);
+  }), [addLine, cart, cartId, cartQuery.isFetching, create, isClient, open, update]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

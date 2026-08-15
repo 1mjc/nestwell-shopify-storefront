@@ -38,7 +38,7 @@ export function Header() {
   }, []);
 
   return <>
-    <div className="announcement"><span>Thoughtful essentials for softer routines.</span><span className="announcement-desktop">Live availability · Secure Shopify checkout</span></div>
+    <div className="announcement"><span>Thoughtful essentials for softer routines.</span><span className="announcement-desktop">Live availability · Secure checkout</span></div>
     <header className="site-header">
       <Link href="/" className="wordmark" aria-label="Nestwell home">nestwell<span>·</span></Link>
       <nav className="desktop-nav" aria-label="Primary navigation">

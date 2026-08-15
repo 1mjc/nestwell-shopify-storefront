@@ -74,4 +74,4 @@ export function CartDrawer() {
   </aside></div>;
 }
 
-export function TrustStrip() { return <section className="trust-strip" aria-label="Nestwell shopping assurances"><div><PackageCheck size={20}/><span><strong>Live availability</strong>Shown from Shopify in real time.</span></div><div><ShieldCheck size={20}/><span><strong>Secure checkout</strong>Completed by Shopify.</span></div><div><Sparkles size={20}/><span><strong>Considered selection</strong>Curated for daily comfort.</span></div></section>; }
+export function TrustStrip() { return <section className="trust-strip" aria-label="Nestwell shopping assurances"><div><PackageCheck size={20}/><span><strong>Live availability</strong>Updated in real time.</span></div><div><ShieldCheck size={20}/><span><strong>Secure checkout</strong>Protected from cart to confirmation.</span></div><div><Sparkles size={20}/><span><strong>Considered selection</strong>Curated for daily comfort.</span></div></section>; }

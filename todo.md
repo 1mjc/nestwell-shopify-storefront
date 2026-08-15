@@ -47,4 +47,5 @@
 - [x] Diagnose and fix the cart checkout action that sends shoppers to a 404 page instead of Shopify checkout.
 - [x] Remove the public Studio navigation and public Studio route from the Nestwell storefront.
 - [ ] Remove the visible Made with Manus branding/badge from the published storefront where platform settings permit.
-- [ ] Verify the password-protection change restores a non-404 Shopify checkout handoff.
+- [x] Verify the password-protection change restores a non-404 Shopify checkout handoff.
+- [x] Remove customer-facing Shopify references from public storefront copy while preserving the underlying commerce integration.

@@ -68,6 +68,5 @@ export async function prefetchForPath(url: string, queryClient: QueryClient, pre
       },
     };
   }
-  if (path === "/studio" || path.startsWith("/admin/seo")) return { title: "Nestwell SEO Studio", description: DEFAULT_DESCRIPTION, noindex: true };
   return { title: SITE, description: DEFAULT_DESCRIPTION, notFound: true };
 }

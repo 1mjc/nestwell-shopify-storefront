@@ -56,3 +56,18 @@ checkout is a Shopify-served host (for example, keep `kjir11-dn.myshopify.com`
 as the primary domain, or dedicate a subdomain such as `checkout.wenestwell.com`
 / `shop.wenestwell.com` to Shopify) while `wenestwell.com` serves this
 storefront. A single hostname cannot be served by both systems.
+
+## Final browser verification
+After the URL-normalization deployment propagated, the live cart's Secure
+checkout action first reached Shopify rather than the original `/cart/c/...`
+404. Shopify then sent the browser to `https://wenestwell.com/password`.
+That path is Shopify's password gate, but it resolves to the headless storefront
+and therefore returns the storefront 404. This is expected until the primary
+domain in Shopify is moved to a Shopify-served hostname or the store password is
+removed after launch.
+
+The owner approved removal of Shopify password protection. The settings screen
+was opened and confirmed the switch is currently enabled; no setting has yet
+been changed because the browser control refreshed before the switch-click could
+be delivered. The checkout flow remains blocked until this approved setting is
+successfully saved or Shopify's primary domain is changed.

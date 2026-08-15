@@ -2,7 +2,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartDrawer } from "@/components/storefront";
 import { CartProvider } from "@/contexts/CartContext";
-import AdminSeo from "@/pages/AdminSeo";
 import CollectionPage from "@/pages/CollectionPage";
 import NotFound from "@/pages/NotFound";
 import ProductPage from "@/pages/ProductPage";
@@ -18,8 +17,6 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/collections/:slug"} component={CollectionPage} />
       <Route path={"/products/:handle"} component={ProductPage} />
-      <Route path={"/admin/seo"} component={AdminSeo} />
-      <Route path={"/studio"} component={AdminSeo} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -45,7 +45,6 @@ export function Header() {
         <button className="nav-trigger" onClick={() => setMenuOpen(value => !value)}>Shop by ritual <ChevronDown size={15} /></button>
         <Link href="/collections/sleep-hygiene">Sleep</Link>
         <Link href="/collections/baby-nursery">Baby & Nursery</Link>
-        <Link href="/admin/seo">Studio</Link>
       </nav>
       <div className="header-actions">
         <button onClick={() => setSearchOpen(true)} aria-label="Search catalogue"><Search size={20} /></button>

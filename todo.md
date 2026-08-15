@@ -44,3 +44,4 @@
 - [x] Capture and document fresh desktop and mobile public-route QA after the SSR and collection-state fixes.
 - [x] Add automated render coverage for the collection loading-error state and its retry control before final checkpointing.
 - [x] Replace the browser tab icon with the supplied Nestwell crescent logo mark across favicon sizes.
+- [ ] Diagnose and fix the cart checkout action that sends shoppers to a 404 page instead of Shopify checkout.

@@ -177,8 +177,44 @@ export async function searchProducts(query: string): Promise<StorefrontProduct[]
 
 export function normalizeCart(cart: StorefrontCart): StorefrontCart {
   const raw = cart as unknown as { lines: StorefrontCart["lines"] | { nodes: StorefrontCart["lines"] } };
-  return { ...cart, lines: Array.isArray(raw.lines) ? raw.lines : raw.lines?.nodes || [] };
+  return {
+    ...cart,
+    checkoutUrl: resolveCheckoutUrl(cart.checkoutUrl),
+    lines: Array.isArray(raw.lines) ? raw.lines : raw.lines?.nodes || [],
+  };
 }
+
+/**
+ * Shopify mints checkout links on the store's configured customer-facing domain.
+ * That domain now serves this headless storefront, which has no `/cart/c/...`
+ * route, so the shopper would receive a 404. Re-point the checkout session at
+ * the Shopify-owned host, which always serves checkout, and preserve the path,
+ * cart token, and every query parameter exactly as Shopify issued them.
+ */
+export function resolveCheckoutUrl(checkoutUrl: string): string {
+  if (!checkoutUrl) return checkoutUrl;
+  try {
+    const url = new URL(checkoutUrl);
+    if (url.hostname === CHECKOUT_HOST) return url.toString();
+    url.hostname = CHECKOUT_HOST;
+    url.protocol = "https:";
+    url.port = "";
+    // `_rdiscovery=false` keeps Shopify from re-resolving the shopper back onto
+    // the store's primary domain, which now serves this headless storefront.
+    url.searchParams.set("_fd", "0");
+    return url.toString();
+  } catch {
+    return checkoutUrl;
+  }
+}
+
+/**
+ * Host that reliably serves Shopify checkout for this store. Shopify redirects
+ * `<shop>.myshopify.com` to the configured primary domain unless the redirect is
+ * suppressed, so checkout links must both target this host and disable that
+ * follow-on redirect.
+ */
+export const CHECKOUT_HOST = SHOPIFY_STOREFRONT_DOMAIN;
 
 function cartResult(cart: StorefrontCart | null, errors: Array<{ message: string }> = []): StorefrontCart {
   if (errors.length) throw new Error(errors.map(error => error.message).join("; "));

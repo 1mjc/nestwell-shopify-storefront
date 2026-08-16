@@ -42,7 +42,7 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
   "contact-information": {
     label: "Customer care",
     title: "Contact Nestwell",
-    intro: "For help with an order, delivery, return, or product question, contact Nestwell directly by email.",
+    intro: "Nestwell is an online retail store serving customers in Canada. For help with an order, delivery, return, or product question, contact us directly by email.",
     seoTitle: "Contact Nestwell | Customer Support",
     seoDescription: "Contact Nestwell for help with orders, products, delivery, or returns.",
     path: POLICY_PATHS["contact-information"],
@@ -51,6 +51,11 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
         heading: "Customer support",
         paragraphs: ["For questions about an order, a product, delivery, or a return, email our customer-support team. Please include your order number whenever you have one. Support replies by email so you have a clear written record of the conversation."],
         email: "nestwell.ca@proton.me",
+      },
+      {
+        heading: "Registered business address",
+        paragraphs: ["Nestwell’s registered business address is listed below. This address matches the business details in our Merchant Center account."],
+        address: ["14-3650 Langstaff Rd Unit #818", "Woodbridge, Ontario L4L 9A8", "Canada"],
       },
     ],
   },
@@ -177,7 +182,7 @@ export default function PolicyPage({ slugOverride, canonicalPathOverride }: Poli
     return <div className="site-shell"><Header /><main className="policy-page policy-missing"><span className="eyebrow">Customer care</span><h1>That policy page is not available.</h1><p>Please return to the customer-care pages or contact Nestwell for help.</p><Link href="/" className="text-button">Return home</Link></main><Footer /></div>;
   }
 
-  return <div className="site-shell"><Header /><main className="policy-page"><div className="policy-hero"><div><span className="eyebrow">{policy.label}</span><h1>{policy.title}</h1></div><p>{policy.intro}</p></div><div className="policy-content">{policy.sections.map(section => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}{section.email ? <a className="policy-email" href={`mailto:${section.email}`}>{section.email}</a> : null}{section.address ? <address>{section.address.map(line => <span key={line}>{line}</span>)}</address> : null}</section>)}</div></main><Footer /></div>;
+  return <div className="site-shell"><Header /><main className="policy-page"><div className="policy-hero"><div><span className="eyebrow">{policy.label}</span><h1>{policy.title}</h1></div><p>{policy.intro}</p></div><div className="policy-content">{policy.sections.map(section => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}{section.email ? <a className="policy-email" href={`mailto:${section.email}`}>{section.email}</a> : null}{section.address ? <address aria-label="Registered business address">{section.address.map(line => <span key={line}>{line}</span>)}</address> : null}</section>)}</div></main><Footer /></div>;
 }
 
 export function ContactPage() {

@@ -54,7 +54,14 @@
 - [ ] Capture the configured Shopify Privacy policy body and recheck the live Privacy page against that source.
 - [ ] Capture the saved Shopify Terms policy body and compare it directly with the live Terms page.
 - [ ] Document a final live verification for Contact, all public policy routes, and footer customer-care links after the policy saves.
-- [ ] Verify Merchant Center 5820758319 domain alignment, existing Shopify feed URLs, and catalogue eligibility without creating duplicate accounts or feeds.
-- [ ] Add Google Merchant Center’s owner-approved HTML verification tag to the live wenestwell.com document head and verify/claim the corrected root domain.
+- [x] Verify Merchant Center 5820758319 domain alignment, existing Shopify feed URLs, and catalogue eligibility without creating duplicate accounts or feeds.
+- [x] Add Google Merchant Center’s owner-approved HTML verification tag to the live wenestwell.com document head and verify/claim the corrected root domain.
+- [x] Capture an affected Merchant Center product’s submitted landing-page URL and recheck whether the URL-mismatch diagnostic clears after the root-domain claim update.
 - [ ] Complete a factual pre-ads measurement and purchase-conversion readiness check without submitting a review, transaction, or campaign without explicit approval.
 - [ ] Produce an evidence-based Google sales-readiness report that identifies every remaining blocker and exact next action.
+- [ ] Reconcile Merchant Center business-information fields with verified public Nestwell identity and contact details.
+- [ ] Reconcile Merchant Center shipping and return-policy settings with the live Canada shipping and configured refund policy without changing commercial terms.
+- [ ] Add missing public business-transparency content only from owner-provided or confirmed Merchant Center facts.
+- [ ] Establish GA4 measurement and purchase-conversion readiness through owner-approved account setup; do not create ads or spend.
+- [ ] Recheck Merchant Center Misrepresentation diagnostics after every supported remediation and prepare—but do not submit—a review request until the owner approves.
+- [ ] Provide a launch-control checklist showing what is fixed, what Google must still approve, and the first safe step to start ads.

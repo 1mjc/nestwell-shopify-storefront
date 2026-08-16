@@ -53,12 +53,13 @@
 - [x] Repair the live Contact route and add globally linked Shipping, Returns, Privacy, and Terms pages using verified business data only.
 - [ ] Capture the configured Shopify Privacy policy body and recheck the live Privacy page against that source.
 - [ ] Capture the saved Shopify Terms policy body and compare it directly with the live Terms page.
+- [ ] Preserve durable evidence of the full saved Shopify Terms source text and its corresponding public-page comparison.
 - [ ] Document a final live verification for Contact, all public policy routes, and footer customer-care links after the policy saves.
 - [x] Verify Merchant Center 5820758319 domain alignment, existing Shopify feed URLs, and catalogue eligibility without creating duplicate accounts or feeds.
 - [x] Add Google Merchant Center’s owner-approved HTML verification tag to the live wenestwell.com document head and verify/claim the corrected root domain.
 - [x] Capture an affected Merchant Center product’s submitted landing-page URL and recheck whether the URL-mismatch diagnostic clears after the root-domain claim update.
 - [ ] Complete a factual pre-ads measurement and purchase-conversion readiness check without submitting a review, transaction, or campaign without explicit approval.
-- [ ] Produce an evidence-based Google sales-readiness report that identifies every remaining blocker and exact next action.
+- [x] Produce an evidence-based Google sales-readiness report that identifies every remaining blocker and exact next action.
 - [x] Reconcile Merchant Center business-information fields with verified public Nestwell identity and contact details.
 - [x] Reconcile Merchant Center shipping and return-policy settings with the live Canada shipping and configured refund policy without changing commercial terms.
 - [x] Capture final saved Merchant Center return-policy evidence beside the live refund-page wording and explicitly confirm the defective-only / 30-day contact relationship.
@@ -71,4 +72,4 @@
 - [x] Capture direct saved readback of both Merchant Center Canada shipping services after alignment.
 - [ ] Capture direct Shopify Google & YouTube evidence that the Nestwell Store GA4 property and completed-checkout purchase event are active.
 - [x] Recheck Merchant Center Misrepresentation diagnostics after every supported remediation and prepare—but do not submit—a review request until the owner approves.
-- [ ] Provide a launch-control checklist showing what is fixed, what Google must still approve, and the first safe step to start ads.
+- [x] Provide a launch-control checklist showing what is fixed, what Google must still approve, and the first safe step to start ads.

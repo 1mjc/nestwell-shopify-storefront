@@ -7,4 +7,4 @@
 - [x] Add accessible, visible footer links to all five public policy routes from every storefront page.
 - [x] Add Vitest coverage that asserts the policy route is registered and each footer policy link targets the correct route.
 - [x] Verify policy routes, direct public product removals, and footer navigation in the running storefront preview at desktop and mobile widths.
-- [ ] Save a checkpoint after all completed work is marked as done and report the remaining Merchant Center identity-verification step.
+- [x] Save a checkpoint after all completed work is marked as done and report the remaining Merchant Center identity-verification step.

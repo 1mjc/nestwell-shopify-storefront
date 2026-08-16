@@ -60,11 +60,15 @@
 - [ ] Complete a factual pre-ads measurement and purchase-conversion readiness check without submitting a review, transaction, or campaign without explicit approval.
 - [ ] Produce an evidence-based Google sales-readiness report that identifies every remaining blocker and exact next action.
 - [x] Reconcile Merchant Center business-information fields with verified public Nestwell identity and contact details.
-- [ ] Reconcile Merchant Center shipping and return-policy settings with the live Canada shipping and configured refund policy without changing commercial terms.
-- [ ] Reopen Merchant Center return-policy details and confirm whether the live 30-day contact window can be represented without contradicting defective-only returns.
+- [x] Reconcile Merchant Center shipping and return-policy settings with the live Canada shipping and configured refund policy without changing commercial terms.
+- [x] Capture final saved Merchant Center return-policy evidence beside the live refund-page wording and explicitly confirm the defective-only / 30-day contact relationship.
+- [x] Reopen Merchant Center return-policy details and confirm whether the live 30-day contact window can be represented without contradicting defective-only returns.
 - [x] Add missing public business-transparency content only from owner-provided or confirmed Merchant Center facts.
 - [ ] Establish GA4 measurement and purchase-conversion readiness through owner-approved account setup; do not create ads or spend.
-- [ ] Add the owner-approved GA4 measurement ID to the live storefront and verify page-view collection for wenestwell.com.
+- [x] Add the owner-approved GA4 measurement ID to the live storefront and verify page-view collection for wenestwell.com.
 - [ ] Implement a factual purchase event at completed checkout confirmation without firing false purchase events from cart or checkout handoff.
-- [ ] Recheck Merchant Center Misrepresentation diagnostics after every supported remediation and prepare—but do not submit—a review request until the owner approves.
+- [ ] Capture direct Shopify Google & YouTube evidence that the Nestwell Store GA4 property and completed-checkout purchase event are active.
+- [x] Capture direct saved readback of both Merchant Center Canada shipping services after alignment.
+- [ ] Capture direct Shopify Google & YouTube evidence that the Nestwell Store GA4 property and completed-checkout purchase event are active.
+- [x] Recheck Merchant Center Misrepresentation diagnostics after every supported remediation and prepare—but do not submit—a review request until the owner approves.
 - [ ] Provide a launch-control checklist showing what is fixed, what Google must still approve, and the first safe step to start ads.

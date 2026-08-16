@@ -3,6 +3,7 @@ import { COLLECTIONS, collectionMeta, type Product } from "@/lib/store";
 import { trpc } from "@/lib/trpc";
 import { useSeo } from "@/hooks/useSeo";
 import { ArrowRight, CircleArrowDown, Sparkles } from "lucide-react";
+import React from "react";
 import { Link } from "wouter";
 
 const heroUrl = "/manus-storage/nestwell-hero-bedroom_ea2b7860.png";
@@ -34,4 +35,4 @@ export default function Home() {
 
 export function ProductGridSkeleton() { return <div className="product-rail">{Array.from({ length: 4 }).map((_, index) => <div className="card-skeleton" key={index}><span /><i /><b /></div>)}</div>; }
 function EmptyCatalogue() { return <div className="empty-catalogue"><p>The live Nestwell catalogue is loading. Please refresh in a moment.</p></div>; }
-export function Footer() { return <footer className="site-footer"><div className="footer-top"><div><Link href="/" className="wordmark">nestwell<span>·</span></Link><p>Small rituals for deeper rest and softer routines.</p></div><div><span className="eyebrow">Explore</span>{COLLECTIONS.slice(0, 4).map(collection => <Link key={collection} href={`/collections/${collectionMeta[collection].slug}`}>{collection}</Link>)}</div><div><span className="eyebrow">Customer care</span><a href="https://wenestwell.com/pages/contact" target="_blank" rel="noreferrer">Contact Nestwell</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Nestwell</span><span>Live catalogue · Secure checkout</span></div></footer>; }
+export function Footer() { return <footer className="site-footer"><div className="footer-top"><div><Link href="/" className="wordmark">nestwell<span>·</span></Link><p>Small rituals for deeper rest and softer routines.</p></div><div><span className="eyebrow">Explore</span>{COLLECTIONS.slice(0, 4).map(collection => <Link key={collection} href={`/collections/${collectionMeta[collection].slug}`}>{collection}</Link>)}</div><div><span className="eyebrow">Customer care</span><Link href="/policies/contact-information">Contact</Link><Link href="/policies/shipping-policy">Shipping &amp; delivery</Link><Link href="/policies/refund-policy">Returns &amp; refunds</Link><Link href="/policies/privacy-policy">Privacy</Link><Link href="/policies/terms-of-service">Terms of service</Link></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Nestwell</span><span>Live catalogue · Secure checkout</span></div></footer>; }

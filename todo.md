@@ -49,3 +49,8 @@
 - [ ] Remove the visible Made with Manus branding/badge from the published storefront where platform settings permit.
 - [x] Verify the password-protection change restores a non-404 Shopify checkout handoff.
 - [x] Remove customer-facing Shopify references from public storefront copy while preserving the underlying commerce integration.
+- [x] Confirm the synced project is the actual deployed source for wenestwell.com before making sales-readiness repairs.
+- [ ] Repair the live Contact route and add globally linked Shipping, Returns, Privacy, and Terms pages using verified business data only.
+- [ ] Verify Merchant Center 5820758319 domain alignment, existing Shopify feed URLs, and catalogue eligibility without creating duplicate accounts or feeds.
+- [ ] Complete a factual pre-ads measurement and purchase-conversion readiness check without submitting a review, transaction, or campaign without explicit approval.
+- [ ] Produce an evidence-based Google sales-readiness report that identifies every remaining blocker and exact next action.

@@ -7,7 +7,7 @@ vi.mock("@/hooks/useSeo", () => ({ useSeo: () => undefined }));
 vi.mock("@/components/storefront", () => ({ Header: () => null }));
 vi.mock("@/pages/Home", () => ({ Footer: () => null }));
 
-import PolicyPage, { POLICY_PATHS } from "./PolicyPage";
+import PolicyPage, { ContactPage, CONTACT_PATH, POLICY_PATHS } from "./PolicyPage";
 
 describe("public policy routes", () => {
   it("keeps the five customer-care paths stable", () => {
@@ -25,5 +25,13 @@ describe("public policy routes", () => {
     expect(html).toContain("Returns &amp; refunds");
     expect(html).toContain("nestwell.ca@proton.me");
     expect(html).toContain("within 30 days of delivery");
+  });
+
+  it("renders the required public Contact route content without asserting an unverified mailing address", () => {
+    const html = renderToString(createElement(Router, { ssrPath: "/contact" }, createElement(ContactPage)));
+    expect(CONTACT_PATH).toBe("/contact");
+    expect(html).toContain("Contact Nestwell");
+    expect(html).toContain("nestwell.ca@proton.me");
+    expect(html).not.toContain("14-3650 Langstaff Rd");
   });
 });

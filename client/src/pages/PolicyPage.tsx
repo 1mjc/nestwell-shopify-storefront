@@ -11,6 +11,8 @@ export type PolicySlug =
   | "privacy-policy"
   | "terms-of-service";
 
+export const CONTACT_PATH = "/contact";
+
 type PolicySection = {
   heading: string;
   paragraphs: string[];
@@ -40,46 +42,41 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
   "contact-information": {
     label: "Customer care",
     title: "Contact Nestwell",
-    intro: "Nestwell is an online retailer based in Canada. We handle customer support by email so that every order question has a clear written record.",
+    intro: "For help with an order, delivery, return, or product question, contact Nestwell directly by email.",
     seoTitle: "Contact Nestwell | Customer Support",
     seoDescription: "Contact Nestwell for help with orders, products, delivery, or returns.",
     path: POLICY_PATHS["contact-information"],
     sections: [
       {
         heading: "Customer support",
-        paragraphs: ["For questions about an order, a product, delivery, or a return, email our customer-support team. Please include your order number whenever you have one."],
+        paragraphs: ["For questions about an order, a product, delivery, or a return, email our customer-support team. Please include your order number whenever you have one. Support replies by email so you have a clear written record of the conversation."],
         email: "nestwell.ca@proton.me",
-      },
-      {
-        heading: "Mail correspondence",
-        paragraphs: ["For written correspondence, please use the address below. Do not send a return to this address unless our support team has given you return instructions."],
-        address: ["Nestwell", "14-3650 Langstaff Rd", "Woodbridge, ON L4L 9A8", "Canada"],
-      },
-      {
-        heading: "Phone support",
-        paragraphs: ["We do not currently offer phone support. Email is the fastest way to receive a documented response about your order."],
       },
     ],
   },
   "shipping-policy": {
     label: "Customer care",
     title: "Shipping & delivery",
-    intro: "Nestwell uses third-party fulfilment partners. Available shipping options, shipping charges, taxes, and the final order total are shown in Shopify checkout before you complete a purchase.",
+    intro: "Nestwell currently ships within Canada. Available shipping charges, taxes, and the final order total are shown before you complete your purchase.",
     seoTitle: "Shipping & Delivery | Nestwell",
     seoDescription: "Read Nestwell’s shipping and delivery information before placing an order.",
     path: POLICY_PATHS["shipping-policy"],
     sections: [
       {
-        heading: "Order processing and delivery",
-        paragraphs: ["Order processing and delivery timing can vary by product availability, destination, and carrier. We do not make a universal delivery-day promise. Please review the latest delivery information provided in checkout and in your order confirmation."],
+        heading: "Order processing",
+        paragraphs: ["Orders are processed within 1–3 business days of purchase."],
       },
       {
-        heading: "Shipping origin and fulfilment",
-        paragraphs: ["Products may be fulfilled and shipped by third-party partners. Where an order is fulfilled from outside Canada, delivery may involve carrier or customs processing. If you have a question about a shipment before ordering, contact us before completing checkout."],
+        heading: "Estimated delivery",
+        paragraphs: ["After an order ships, delivery typically takes 10–20 business days. Delivery timing can vary with carrier conditions."],
+      },
+      {
+        heading: "Shipping rates and tracking",
+        paragraphs: ["Standard shipping is CAD $12. Shipping is free on orders over CAD $75. A tracking number is sent by email once an order ships."],
       },
       {
         heading: "Order updates and delays",
-        paragraphs: ["We send an order confirmation after purchase. If there is a material change to your order, contact our support team with your order number so we can review the available information with the fulfilment partner."],
+        paragraphs: ["If an order has not arrived within 25 business days, contact our support team with your order number so we can investigate the available delivery information."],
         email: "nestwell.ca@proton.me",
       },
     ],
@@ -163,15 +160,17 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
   },
 };
 
-export default function PolicyPage() {
+type PolicyPageProps = { slugOverride?: PolicySlug; canonicalPathOverride?: string };
+
+export default function PolicyPage({ slugOverride, canonicalPathOverride }: PolicyPageProps = {}) {
   const [, params] = useRoute("/policies/:slug");
-  const slug = params?.slug as PolicySlug | undefined;
+  const slug = slugOverride || (params?.slug as PolicySlug | undefined);
   const policy = slug ? POLICY_PAGES[slug] : undefined;
 
   useSeo(
     policy?.seoTitle || "Nestwell policy",
     policy?.seoDescription || "Customer care information from Nestwell.",
-    policy?.path || "/policies",
+    canonicalPathOverride || policy?.path || "/policies",
   );
 
   if (!policy) {
@@ -179,4 +178,8 @@ export default function PolicyPage() {
   }
 
   return <div className="site-shell"><Header /><main className="policy-page"><div className="policy-hero"><div><span className="eyebrow">{policy.label}</span><h1>{policy.title}</h1></div><p>{policy.intro}</p></div><div className="policy-content">{policy.sections.map(section => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}{section.email ? <a className="policy-email" href={`mailto:${section.email}`}>{section.email}</a> : null}{section.address ? <address>{section.address.map(line => <span key={line}>{line}</span>)}</address> : null}</section>)}</div></main><Footer /></div>;
+}
+
+export function ContactPage() {
+  return <PolicyPage slugOverride="contact-information" canonicalPathOverride={CONTACT_PATH} />;
 }

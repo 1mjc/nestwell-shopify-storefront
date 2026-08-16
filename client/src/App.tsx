@@ -4,7 +4,7 @@ import { CartDrawer } from "@/components/storefront";
 import { CartProvider } from "@/contexts/CartContext";
 import CollectionPage from "@/pages/CollectionPage";
 import NotFound from "@/pages/NotFound";
-import PolicyPage from "@/pages/PolicyPage";
+import PolicyPage, { ContactPage } from "@/pages/PolicyPage";
 import ProductPage from "@/pages/ProductPage";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -18,7 +18,8 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/collections/:slug"} component={CollectionPage} />
       <Route path={"/products/:handle"} component={ProductPage} />
-      <Route path={"/policies/:slug"} component={PolicyPage} />
+      <Route path={"/contact"} component={ContactPage} />
+      <Route path={"/policies/:slug"}>{() => <PolicyPage />}</Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

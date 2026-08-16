@@ -23,6 +23,7 @@ export type SsrPrefetch = {
 const SITE = "Nestwell | Rest Better, Live Softer";
 const DEFAULT_DESCRIPTION = "Thoughtful essentials for sleep, comfort, natural home rituals, wellness, and nursery moments.";
 const POLICY_META: Record<string, Pick<HeadMeta, "title" | "description" | "canonicalPath">> = {
+  "/contact": { title: "Contact Nestwell | Customer Support", description: "Contact Nestwell for help with orders, products, delivery, or returns.", canonicalPath: "/contact" },
   "/policies/contact-information": { title: "Contact Nestwell | Customer Support", description: "Contact Nestwell for help with orders, products, delivery, or returns.", canonicalPath: "/policies/contact-information" },
   "/policies/shipping-policy": { title: "Shipping & Delivery | Nestwell", description: "Read Nestwell’s shipping and delivery information before placing an order.", canonicalPath: "/policies/shipping-policy" },
   "/policies/refund-policy": { title: "Returns & Refunds | Nestwell", description: "Read Nestwell’s process for damaged, defective, or incorrect items and approved refunds.", canonicalPath: "/policies/refund-policy" },

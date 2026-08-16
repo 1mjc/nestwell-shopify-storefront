@@ -50,7 +50,7 @@
 - [x] Verify the password-protection change restores a non-404 Shopify checkout handoff.
 - [x] Remove customer-facing Shopify references from public storefront copy while preserving the underlying commerce integration.
 - [x] Confirm the synced project is the actual deployed source for wenestwell.com before making sales-readiness repairs.
-- [ ] Repair the live Contact route and add globally linked Shipping, Returns, Privacy, and Terms pages using verified business data only.
+- [x] Repair the live Contact route and add globally linked Shipping, Returns, Privacy, and Terms pages using verified business data only.
 - [ ] Capture the configured Shopify Privacy policy body and recheck the live Privacy page against that source.
 - [ ] Capture the saved Shopify Terms policy body and compare it directly with the live Terms page.
 - [ ] Document a final live verification for Contact, all public policy routes, and footer customer-care links after the policy saves.
@@ -59,9 +59,12 @@
 - [x] Capture an affected Merchant Center product’s submitted landing-page URL and recheck whether the URL-mismatch diagnostic clears after the root-domain claim update.
 - [ ] Complete a factual pre-ads measurement and purchase-conversion readiness check without submitting a review, transaction, or campaign without explicit approval.
 - [ ] Produce an evidence-based Google sales-readiness report that identifies every remaining blocker and exact next action.
-- [ ] Reconcile Merchant Center business-information fields with verified public Nestwell identity and contact details.
+- [x] Reconcile Merchant Center business-information fields with verified public Nestwell identity and contact details.
 - [ ] Reconcile Merchant Center shipping and return-policy settings with the live Canada shipping and configured refund policy without changing commercial terms.
-- [ ] Add missing public business-transparency content only from owner-provided or confirmed Merchant Center facts.
+- [ ] Reopen Merchant Center return-policy details and confirm whether the live 30-day contact window can be represented without contradicting defective-only returns.
+- [x] Add missing public business-transparency content only from owner-provided or confirmed Merchant Center facts.
 - [ ] Establish GA4 measurement and purchase-conversion readiness through owner-approved account setup; do not create ads or spend.
+- [ ] Add the owner-approved GA4 measurement ID to the live storefront and verify page-view collection for wenestwell.com.
+- [ ] Implement a factual purchase event at completed checkout confirmation without firing false purchase events from cart or checkout handoff.
 - [ ] Recheck Merchant Center Misrepresentation diagnostics after every supported remediation and prepare—but do not submit—a review request until the owner approves.
 - [ ] Provide a launch-control checklist showing what is fixed, what Google must still approve, and the first safe step to start ads.

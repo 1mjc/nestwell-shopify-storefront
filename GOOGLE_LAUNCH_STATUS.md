@@ -21,7 +21,7 @@ The remaining eligibility decision is now with Google: an owner-approved **Misre
 | Customer transparency | Ready | Public Contact, Shipping, Returns, Privacy, and Terms routes are globally linked and use verified business/policy facts. |
 | Merchant business details | Ready | Nestwell identity, Woodbridge address, `https://wenestwell.com`, and `nestwell.ca@proton.me` are configured and reflected publicly. |
 | Returns | Review pending | Merchant Center has Canada / defective-only / no-exchanges policy pointing to the live returns page. Google may take up to 10 days to review the saved policy. |
-| Shipping | Ready | Both active Canada services now show 11–23 total business days, CAD $12 flat shipping, and free shipping over CAD $75. |
+| Shipping | Ready | Both active Canada services now show 11–23 total business days, CAD $12 flat shipping, and free shipping over CAD $75; a dynamic sitewide/cart promotion now reflects this offer. |
 | GA4 | Active | Nestwell Store property `G-F0PM857JTW` receives real-time storefront measurement. |
 | Shopify purchase measurement | Connected | The existing Google & YouTube channel is connected to both Merchant Center and Nestwell Store GA4, Shopify’s supported completed-checkout path. A real completed order has not been placed solely for testing. |
 | Merchant eligibility | Google review pending | Misrepresentation review request submitted with owner approval. |
@@ -32,6 +32,8 @@ The remaining eligibility decision is now with Google: an owner-approved **Misre
 ### Public Storefront and Customer Trust
 
 The public site now has a working Contact route, shared customer-care links, factual policy pages, the confirmed Nestwell support email, and owner-confirmed address details. Shipping text reflects the configured Shopify policy: Canada coverage, 1–3 business-day processing, a 10–20 business-day delivery estimate, CAD $12 standard shipping, and free shipping over CAD $75. The returns page frames the 30-day period as the time to contact Nestwell about qualifying damaged, defective, or incorrect items; it does not promise general discretionary returns.
+
+The sitewide announcement and cart now surface the free-shipping offer dynamically. Customers see the CAD $75 threshold before browsing, a precise remaining amount below the threshold, and an unlocked message once the live cart total is above it. An exact CAD $75 cart correctly requires one additional cent because the published offer is stated as shipping **over** CAD $75.
 
 ### Merchant Center and Product Source
 
@@ -48,6 +50,10 @@ A read-only Shopify Admin catalogue sample confirms the public product descripti
 One item requires an owner review before any future Merchant Center request: **Handheld CES Device with Ear Clips**. Its current product description correctly disclaims use as a substitute for professional medical advice, diagnosis, or treatment, but its Shopify source handle includes sensitive terms such as “sleep aid,” “insomnia,” and “anxiety.” Do not add medical claims or change its Google categorization until its intended use, legal documentation, and applicable compliance status are confirmed.
 
 ## Remaining Actions
+
+### Direct Sales Versus Google Ads
+
+**Direct sales are ready now.** The live storefront, cart, checkout, policy pages, shipping offer, and customer support path operate independently of Merchant Center eligibility. **Google Shopping listings and paid ads remain blocked** until Google clears the account-level Misrepresentation issue after its review process. The current review outcome controls when that can happen; no further storefront deployment can override it.
 
 ### 1. Wait for Google’s Reviews
 

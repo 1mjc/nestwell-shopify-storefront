@@ -82,5 +82,7 @@
 - [x] Add a verified plain-language About/How Nestwell Works page that explains the retail and fulfilment model without unsupported sourcing or delivery claims.
 - [x] Diagnose and resolve the published `/about` route 404 before treating the new trust page as live.
 - [ ] Re-audit the live site and Merchant Center against Google’s trust guidance after the privacy-preserving transparency update.
-- [ ] Add a dynamic sitewide free-shipping promotion that reflects the verified CAD $75 threshold without misleading customers below the threshold.
-- [ ] Verify the dynamic promotion on product and cart flows and publish the exact direct-sales versus Google-ads launch status.
+- [x] Add a dynamic sitewide free-shipping promotion that reflects the verified CAD $75 threshold without misleading customers below the threshold.
+- [x] Verify the dynamic promotion on product and cart flows and publish the exact direct-sales versus Google-ads launch status.
+- [x] Re-verify the published free-shipping promotion on a live product page and record the result before closing promotion QA.
+- [x] Fix the exact-CAD-$75 cart edge case so a non-qualifying subtotal never displays “Add $0.00” to unlock shipping.

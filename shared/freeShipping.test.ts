@@ -8,7 +8,7 @@ describe("free shipping progress", () => {
   });
 
   it("does not mark a cart as qualified until it is over the stated threshold", () => {
-    expect(getFreeShippingProgress(75)).toEqual({ subtotal: 75, remaining: 0, qualified: false });
+    expect(getFreeShippingProgress(75)).toEqual({ subtotal: 75, remaining: 0.01, qualified: false });
     expect(getFreeShippingProgress(75.01)).toEqual({ subtotal: 75.01, remaining: 0, qualified: true });
   });
 });

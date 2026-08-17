@@ -12,7 +12,7 @@ export function getFreeShippingProgress(subtotalInput: string | number | null | 
   const qualified = subtotal > FREE_SHIPPING_THRESHOLD_CAD;
   return {
     subtotal,
-    remaining: qualified ? 0 : Math.max(0, FREE_SHIPPING_THRESHOLD_CAD - subtotal),
+    remaining: qualified ? 0 : Math.max(0.01, FREE_SHIPPING_THRESHOLD_CAD - subtotal),
     qualified,
   };
 }

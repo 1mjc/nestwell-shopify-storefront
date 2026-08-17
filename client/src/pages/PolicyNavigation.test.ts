@@ -15,10 +15,12 @@ describe("policy navigation", () => {
     const appSource = readFileSync(fileURLToPath(new URL("../App.tsx", import.meta.url)), "utf8");
     expect(appSource).toContain('path={"/policies/:slug"}>{() => <PolicyPage />}</Route>');
     expect(appSource).toContain('path={"/contact"} component={ContactPage}');
+    expect(appSource).toContain('path={"/about"} component={AboutPage}');
   });
 
   it("renders every policy destination in the shared footer", () => {
     const html = renderToString(createElement(Router, { ssrPath: "/" }, createElement(Footer)));
+    expect(html).toContain('href="/about"');
     expect(html).toContain(`href="${CONTACT_PATH}"`);
     Object.entries(POLICY_PATHS).filter(([slug]) => slug !== "contact-information").forEach(([, path]) => expect(html).toContain(`href="${path}"`));
   });

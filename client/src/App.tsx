@@ -6,6 +6,7 @@ import CollectionPage from "@/pages/CollectionPage";
 import NotFound from "@/pages/NotFound";
 import PolicyPage, { ContactPage } from "@/pages/PolicyPage";
 import ProductPage from "@/pages/ProductPage";
+import AboutPage from "@/pages/AboutPage";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -16,6 +17,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/about"} component={AboutPage} />
       <Route path={"/collections/:slug"} component={CollectionPage} />
       <Route path={"/products/:handle"} component={ProductPage} />
       <Route path={"/contact"} component={ContactPage} />

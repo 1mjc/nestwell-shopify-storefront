@@ -52,6 +52,7 @@
 - [x] Confirm the synced project is the actual deployed source for wenestwell.com before making sales-readiness repairs.
 - [x] Repair the live Contact route and add globally linked Shipping, Returns, Privacy, and Terms pages using verified business data only.
 - [ ] Capture the configured Shopify Privacy policy body and recheck the live Privacy page against that source.
+- [ ] Preserve durable evidence of the full automated Shopify Privacy source text and its corresponding public-page comparison.
 - [ ] Capture the saved Shopify Terms policy body and compare it directly with the live Terms page.
 - [ ] Preserve durable evidence of the full saved Shopify Terms source text and its corresponding public-page comparison.
 - [ ] Document a final live verification for Contact, all public policy routes, and footer customer-care links after the policy saves.
@@ -73,3 +74,10 @@
 - [ ] Capture direct Shopify Google & YouTube evidence that the Nestwell Store GA4 property and completed-checkout purchase event are active.
 - [x] Recheck Merchant Center Misrepresentation diagnostics after every supported remediation and prepare—but do not submit—a review request until the owner approves.
 - [x] Provide a launch-control checklist showing what is fixed, what Google must still approve, and the first safe step to start ads.
+- [ ] Document the rejected Merchant Center Misrepresentation review and audit the resulting identity-verification requirement.
+- [ ] Compare the Merchant Center legal business identity, Google payments profile, Shopify legal/business records, and public Nestwell identity for verified mismatches.
+- [ ] Complete only owner-approved identity or public-trust corrections needed for the next permitted Merchant Center review.
+- [ ] Prepare a factual re-review evidence package without submitting another request until Google allows it and the owner approves.
+- [ ] Preserve the owner’s privacy: do not publish or add a personal phone number to Merchant Center or the public Nestwell site.
+- [ ] Add a verified plain-language About/How Nestwell Works page that explains the retail and fulfilment model without unsupported sourcing or delivery claims.
+- [ ] Re-audit the live site and Merchant Center against Google’s trust guidance after the privacy-preserving transparency update.

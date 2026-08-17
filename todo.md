@@ -77,11 +77,16 @@
 - [ ] Document the rejected Merchant Center Misrepresentation review and audit the resulting identity-verification requirement.
 - [ ] Compare the Merchant Center legal business identity, Google payments profile, Shopify legal/business records, and public Nestwell identity for verified mismatches.
 - [ ] Complete only owner-approved identity or public-trust corrections needed for the next permitted Merchant Center review.
-- [ ] Prepare a factual re-review evidence package without submitting another request until Google allows it and the owner approves.
-- [ ] Preserve the owner’s privacy: do not publish or add a personal phone number to Merchant Center or the public Nestwell site.
+- [x] Prepare a factual re-review evidence package without submitting another request until Google allows it and the owner approves.
+- [x] Preserve the owner’s privacy: do not publish or add a personal phone number to Merchant Center or the public Nestwell site.
 - [x] Add a verified plain-language About/How Nestwell Works page that explains the retail and fulfilment model without unsupported sourcing or delivery claims.
 - [x] Diagnose and resolve the published `/about` route 404 before treating the new trust page as live.
-- [ ] Re-audit the live site and Merchant Center against Google’s trust guidance after the privacy-preserving transparency update.
+- [x] Re-audit the live site and Merchant Center against Google’s trust guidance after the privacy-preserving transparency update.
+- [x] Exclude the owner-approved Handheld CES Device with Ear Clips from Google listings while retaining its existing non-public direct-store state.
+- [ ] Verify the CES device is absent from the active Google product source and was not removed from any active direct-store sales channel.
+- [ ] Capture direct Merchant Center or Google & YouTube evidence that the CES device is absent from the active Google product source.
+- [ ] Capture a definitive Merchant Center source-level zero result for the CES title or offer ID before closing the Google-source verification.
+- [x] Confirm the CES device live product page remains non-public after Google-scope verification.
 - [x] Add a dynamic sitewide free-shipping promotion that reflects the verified CAD $75 threshold without misleading customers below the threshold.
 - [x] Verify the dynamic promotion on product and cart flows and publish the exact direct-sales versus Google-ads launch status.
 - [x] Re-verify the published free-shipping promotion on a live product page and record the result before closing promotion QA.

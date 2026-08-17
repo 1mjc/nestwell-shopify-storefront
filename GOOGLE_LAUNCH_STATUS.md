@@ -41,6 +41,12 @@ The existing Merchant Center account and existing Shopify App API source were re
 
 The Nestwell Store GA4 property and web stream were created for Canada, Toronto reporting time, Canadian Dollar, Shopping, and a sales objective. The storefront’s live document head loads the approved GA4 tag, and Analytics Realtime recorded a Canada visitor after a live page load. Shopify’s Google & YouTube channel now lists both Merchant Center and `G-F0PM857JTW (Nestwell Store)` as connected services. Shopify documents that its Google & YouTube channel is the supported way to connect GA4 and automatically collect certain ecommerce events after tags are configured.[1] [2]
 
+### Post-Rejection Catalogue Claim Audit
+
+A read-only Shopify Admin catalogue sample confirms the public product descriptions have been normalized to factual retail language: records use the **Nestwell** vendor, identify available options and material/usage context, and avoid claims of treatment, diagnosis, cure, guaranteed outcomes, or third-party endorsement. Baby-sleep products direct customers to current safe-sleep guidance, and the white-noise mask is explicitly presented as a personal accessory rather than a treatment for a health condition.
+
+One item requires an owner review before any future Merchant Center request: **Handheld CES Device with Ear Clips**. Its current product description correctly disclaims use as a substitute for professional medical advice, diagnosis, or treatment, but its Shopify source handle includes sensitive terms such as “sleep aid,” “insomnia,” and “anxiety.” Do not add medical claims or change its Google categorization until its intended use, legal documentation, and applicable compliance status are confirmed.
+
 ## Remaining Actions
 
 ### 1. Wait for Google’s Reviews

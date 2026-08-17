@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { COLLECTIONS, collectionMeta, formatMoney, productImage, type Product } from "@/lib/store";
 import { trpc } from "@/lib/trpc";
+import { FREE_SHIPPING_THRESHOLD_CAD, getFreeShippingProgress } from "@shared/freeShipping";
 
 export function ProductCard({ product, compact = false }: { product: Product; compact?: boolean }) {
   const image = productImage(product);
@@ -23,6 +24,7 @@ export function ProductCard({ product, compact = false }: { product: Product; co
 export function Header() {
   const [, navigate] = useLocation();
   const { cart, setOpen } = useCart();
+  const shippingProgress = getFreeShippingProgress(cart?.cost.totalAmount.amount);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -38,7 +40,7 @@ export function Header() {
   }, []);
 
   return <>
-    <div className="announcement"><span>Thoughtful essentials for softer routines.</span><span className="announcement-desktop">Live availability · Secure checkout</span></div>
+    <div className="announcement" aria-live="polite"><span>{shippingProgress.qualified ? "Free Canada shipping unlocked" : `Free Canada shipping over CAD $${FREE_SHIPPING_THRESHOLD_CAD}`}</span><span className="announcement-desktop">{cart?.lines.length ? shippingProgress.qualified ? "Your cart qualifies for free shipping" : `${formatMoney({ amount: shippingProgress.remaining.toFixed(2), currencyCode: "CAD" })} away from free shipping` : "Live availability · Secure checkout"}</span></div>
     <header className="site-header">
       <Link href="/" className="wordmark" aria-label="Nestwell home">nestwell<span>·</span></Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
@@ -68,10 +70,11 @@ function SearchSkeleton() { return <div className="skeleton-list">{Array.from({ 
 
 export function CartDrawer() {
   const { cart, busy, open, setOpen, updateLine, checkout } = useCart();
+  const shippingProgress = getFreeShippingProgress(cart?.cost.totalAmount.amount);
   if (!open) return null;
   return <div className="cart-layer"><button className="cart-backdrop" aria-label="Close cart" onClick={() => setOpen(false)} /><aside className="cart-drawer" aria-label="Shopping cart"><div className="cart-heading"><span><small>Your selection</small><h2>Cart ({cart?.totalQuantity || 0})</h2></span><button onClick={() => setOpen(false)} aria-label="Close cart"><X size={21}/></button></div>
-    {!cart?.lines.length ? <div className="cart-empty"><ShoppingBag size={28}/><h3>There’s room for a softer ritual.</h3><p>Explore considered essentials for sleep, home, wellness, and nursery moments.</p><button onClick={() => setOpen(false)} className="filled-button">Continue exploring</button></div> : <><div className="cart-lines">{cart.lines.map(line => <div className="cart-line" key={line.id}><img src={line.merchandise.product.featuredImage?.url || ""} alt=""/><div><Link href={`/products/${line.merchandise.product.handle}`} onClick={() => setOpen(false)}>{line.merchandise.product.title}</Link><small>{line.merchandise.title !== "Default Title" ? line.merchandise.title : ""}</small><span>{formatMoney(line.merchandise.price)}</span><div className="quantity-control"><button disabled={busy} onClick={() => updateLine(line.id, line.quantity - 1)} aria-label="Decrease quantity"><Minus size={14}/></button><b>{line.quantity}</b><button disabled={busy} onClick={() => updateLine(line.id, line.quantity + 1)} aria-label="Increase quantity"><Plus size={14}/></button></div></div><button className="line-remove" disabled={busy} onClick={() => updateLine(line.id, 0)}>Remove</button></div>)}</div><div className="cart-footer"><div><span>Subtotal</span><strong>{formatMoney(cart.cost.totalAmount)}</strong></div><p>Taxes and delivery are confirmed securely at checkout.</p><button className="filled-button checkout-button" onClick={checkout} disabled={busy}>Secure checkout <ArrowRight size={17}/></button></div></>}
+    {!cart?.lines.length ? <div className="cart-empty"><ShoppingBag size={28}/><h3>There’s room for a softer ritual.</h3><p>Explore considered essentials for sleep, home, wellness, and nursery moments.</p><button onClick={() => setOpen(false)} className="filled-button">Continue exploring</button></div> : <><div className="cart-lines">{cart.lines.map(line => <div className="cart-line" key={line.id}><img src={line.merchandise.product.featuredImage?.url || ""} alt=""/><div><Link href={`/products/${line.merchandise.product.handle}`} onClick={() => setOpen(false)}>{line.merchandise.product.title}</Link><small>{line.merchandise.title !== "Default Title" ? line.merchandise.title : ""}</small><span>{formatMoney(line.merchandise.price)}</span><div className="quantity-control"><button disabled={busy} onClick={() => updateLine(line.id, line.quantity - 1)} aria-label="Decrease quantity"><Minus size={14}/></button><b>{line.quantity}</b><button disabled={busy} onClick={() => updateLine(line.id, line.quantity + 1)} aria-label="Increase quantity"><Plus size={14}/></button></div></div><button className="line-remove" disabled={busy} onClick={() => updateLine(line.id, 0)}>Remove</button></div>)}</div><div className="cart-footer"><div className={`shipping-progress ${shippingProgress.qualified ? "shipping-qualified" : ""}`}><PackageCheck size={18}/><span><strong>{shippingProgress.qualified ? "Free Canada shipping unlocked" : "Free Canada shipping available"}</strong><small>{shippingProgress.qualified ? "Your subtotal is over CAD $75." : `Add ${formatMoney({ amount: shippingProgress.remaining.toFixed(2), currencyCode: "CAD" })} to unlock free shipping over CAD $75.`}</small></span></div><div><span>Subtotal</span><strong>{formatMoney(cart.cost.totalAmount)}</strong></div><p>Taxes and delivery are confirmed securely at checkout.</p><button className="filled-button checkout-button" onClick={checkout} disabled={busy}>Secure checkout <ArrowRight size={17}/></button></div></>}
   </aside></div>;
 }
 
-export function TrustStrip() { return <section className="trust-strip" aria-label="Nestwell shopping assurances"><div><PackageCheck size={20}/><span><strong>Live availability</strong>Updated in real time.</span></div><div><ShieldCheck size={20}/><span><strong>Secure checkout</strong>Protected from cart to confirmation.</span></div><div><Sparkles size={20}/><span><strong>Considered selection</strong>Curated for daily comfort.</span></div></section>; }
+export function TrustStrip() { return <section className="trust-strip" aria-label="Nestwell shopping assurances"><div><PackageCheck size={20}/><span><strong>Free Canada shipping</strong>On orders over CAD $75.</span></div><div><ShieldCheck size={20}/><span><strong>Secure checkout</strong>Protected from cart to confirmation.</span></div><div><Sparkles size={20}/><span><strong>Considered selection</strong>Curated for daily comfort.</span></div></section>; }

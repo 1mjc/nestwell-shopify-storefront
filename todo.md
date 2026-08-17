@@ -79,5 +79,8 @@
 - [ ] Complete only owner-approved identity or public-trust corrections needed for the next permitted Merchant Center review.
 - [ ] Prepare a factual re-review evidence package without submitting another request until Google allows it and the owner approves.
 - [ ] Preserve the owner’s privacy: do not publish or add a personal phone number to Merchant Center or the public Nestwell site.
-- [ ] Add a verified plain-language About/How Nestwell Works page that explains the retail and fulfilment model without unsupported sourcing or delivery claims.
+- [x] Add a verified plain-language About/How Nestwell Works page that explains the retail and fulfilment model without unsupported sourcing or delivery claims.
+- [x] Diagnose and resolve the published `/about` route 404 before treating the new trust page as live.
 - [ ] Re-audit the live site and Merchant Center against Google’s trust guidance after the privacy-preserving transparency update.
+- [ ] Add a dynamic sitewide free-shipping promotion that reflects the verified CAD $75 threshold without misleading customers below the threshold.
+- [ ] Verify the dynamic promotion on product and cart flows and publish the exact direct-sales versus Google-ads launch status.

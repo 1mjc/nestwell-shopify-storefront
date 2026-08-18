@@ -34,6 +34,8 @@ describe("public policy routes", () => {
     expect(html).toContain("nestwell.ca@proton.me");
     expect(html).toContain("14-3650 Langstaff Rd Unit #818");
     expect(html).toContain("Woodbridge, Ontario L4L 9A8");
+    expect(html).toContain("Customer correspondence address");
+    expect(html).not.toContain("Registered business address");
     expect(html).toContain("online retail store serving customers in Canada");
   });
 });

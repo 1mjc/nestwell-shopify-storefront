@@ -81,6 +81,7 @@
 - [x] Verify Merchant Center now uses the owner-confirmed Rainbow legal address while Shopify’s legal record remains unchanged.
 - [x] Preserve residence privacy by avoiding unneeded public disclosure of the Rainbow legal address while retaining an accurate public customer-contact address.
 - [x] Label the public Langstaff address as the customer correspondence and support address so it is not represented as the Merchant Center legal residence.
+- [x] Verify the published Contact page receives the customer-correspondence wording before submitting the next Merchant Center review.
 - [x] Preserve the owner’s privacy: do not publish or add a personal phone number to Merchant Center or the public Nestwell site.
 - [x] Add a verified plain-language About/How Nestwell Works page that explains the retail and fulfilment model without unsupported sourcing or delivery claims.
 - [x] Diagnose and resolve the published `/about` route 404 before treating the new trust page as live.
@@ -92,8 +93,13 @@
 - [x] Document the Aug 18 Merchant Center re-review eligibility, current Misrepresentation status, and non-blocking Google Ads/capacity notices.
 - [ ] Complete a final reputation, transparency, and account-data audit against Google’s displayed Misrepresentation guidance before requesting another review.
 - [ ] Obtain explicit owner approval and submit the newly permitted Aug 18 Merchant Center Misrepresentation re-review without linking Ads or creating a campaign.
+- [ ] Document the repeated Misrepresentation review rejection and pause all further review submissions pending a specific Google rationale or verification prompt.
+- [ ] Collect the exact latest Google rejection content and any identity-verification requirement before proposing another Merchant Center change.
+- [x] Prepare a specific support-escalation and evidence package rather than repeating generic re-review requests.
+- [x] Prepare the official Google Merchant suspended-account support escalation with the factual evidence package, without submitting it until the owner approves.
 - [x] Confirm the CES device live product page remains non-public after Google-scope verification.
 - [x] Add a dynamic sitewide free-shipping promotion that reflects the verified CAD $75 threshold without misleading customers below the threshold.
 - [x] Verify the dynamic promotion on product and cart flows and publish the exact direct-sales versus Google-ads launch status.
 - [x] Re-verify the published free-shipping promotion on a live product page and record the result before closing promotion QA.
 - [x] Fix the exact-CAD-$75 cart edge case so a non-qualifying subtotal never displays “Add $0.00” to unlock shipping.
+- [x] Preserve the unsubmitted Google support-form evidence and identify the available official Merchant Center support routes without creating, linking, or inventing a Google Ads Customer ID.

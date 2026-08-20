@@ -2,12 +2,12 @@
 
 **Storefront:** `https://wenestwell.com`  
 **Merchant Center account:** `5820758319`  
-**Prepared:** August 17, 2026  
+**Prepared:** August 18, 2026  
 **Purpose:** Preserve factual evidence for the next Merchant Center Misrepresentation re-review. This document is not a request to Google and does not replace any identity-verification prompt Google may show in Merchant Center.
 
 ## Current Account Status
 
-Google rejected the account-level Misrepresentation review and advised reviewing the policy requirements, completing identity verification if Google requests it, and requesting another review only when permitted. The current account must retain its existing Merchant Center account, existing Shopify App API source, and verified `wenestwell.com` claim; a duplicate account or source must not be created.
+Google rejected two account-level Misrepresentation reviews. The latest diagnostic re-enabled a review request on August 18, 2026, but Google’s official guidance warns that a cooldown may begin after a second unsuccessful review. Further reviews are paused pending an explicit identity-verification prompt, a specific Google explanation, or a support escalation. The current account must retain its existing Merchant Center account, existing Shopify App API source, and verified `wenestwell.com` claim; a duplicate account or source must not be created.
 
 ## Completed Storefront and Merchant Evidence
 
@@ -15,7 +15,7 @@ Google rejected the account-level Misrepresentation review and advised reviewing
 |---|---|---|
 | Store domain | `https://wenestwell.com` is the live storefront and is verified and claimed in the existing Merchant Center account. | Live document head and Merchant Center website settings |
 | Product URLs | The existing Shopify App API source submits `wenestwell.com` product landing pages; the earlier domain mismatch is cleared. | Merchant Center affected-offer detail |
-| Customer support | The public Contact page and Merchant Center show the owner-confirmed Nestwell name, Woodbridge address, `https://wenestwell.com`, and `nestwell.ca@proton.me`. | `/contact` and Merchant Center business information |
+| Legal and customer contact | Shopify and Merchant Center now align on the owner-confirmed legal business address: Rainbow Drive, Vaughan, Ontario, L4L 2K8. The public Contact page preserves residence privacy by identifying the Langstaff location only as the customer correspondence address. `https://wenestwell.com` and `nestwell.ca@proton.me` match across public and account records. | Shopify legal settings, Merchant Center business information, and `/contact` |
 | Policies | Shipping, returns, privacy, and terms are public and linked globally. | Shared footer and `/policies/*` routes |
 | Shipping | Canada services show 11–23 total business days, CAD $12 standard shipping, and free shipping over CAD $75. | Merchant Center shipping services and public shipping page |
 | Returns | Merchant Center is configured for Canada, defective-only returns, no exchanges, and the live policy URL. | Merchant Center returns and `/policies/refund-policy` |
@@ -35,12 +35,17 @@ The reviewed live catalogue sample uses factual product descriptions and does no
 
 1. Confirm Merchant Center has re-enabled a review option or has asked for a specific additional document.
 2. If Google presents an official identity-verification prompt, complete it only in the authenticated Merchant Center interface with valid owner/legal-business documents. Do not upload identity documents to this project or send them in chat.
-3. The CES device was rechecked after owner approval for exclusion. Shopify’s product-publication record shows no active sales-channel publications for the item, including no Google & YouTube publication. It remains available through the direct Nestwell storefront but is not actively published to the Google channel; no product price, inventory, description, or direct-store availability was changed.
+3. The CES device was rechecked after owner approval for exclusion. Shopify’s product record is **Draft** with no active sales-channel publication, including no Google & YouTube publication. Its direct storefront URL is also non-public. No product price, inventory, description, or publication state was changed during the Google-readiness work.
 4. Recheck that the existing business information, shipping/returns settings, public policies, and `wenestwell.com` claim remain unchanged.
 5. Obtain owner approval before submitting any new review request.
+
+## Official Repeated-Review Constraint and Escalation
+
+Google’s official guidance says that identity verification, when requested, must be completed from the Merchant Center **Needs attention** tab with valid government-issued or business-registration documents. It also says that if an issue remains unresolved after a second review, the merchant should contact Google support; a further cooldown can apply and support cannot shorten it. The correct next action is therefore a factual support escalation with this evidence package, not another blind review request.
 
 ## References
 
 1. [Google Merchant Center — Misrepresentation policy](https://support.google.com/merchants/answer/12079606)
 2. [Google Merchant Center — Business information requirements](https://support.google.com/merchants/answer/14286818)
 3. [Shopify Help Center — Google Analytics 4 setup](https://help.shopify.com/en/manual/reports-and-analytics/google-analytics/google-analytics-setup)
+4. [Google Merchant Center — Request a review of your issues](https://support.google.com/merchants/answer/13585221?hl=en)

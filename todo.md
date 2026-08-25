@@ -103,3 +103,12 @@
 - [x] Re-verify the published free-shipping promotion on a live product page and record the result before closing promotion QA.
 - [x] Fix the exact-CAD-$75 cart edge case so a non-qualifying subtotal never displays “Add $0.00” to unlock shipping.
 - [x] Preserve the unsubmitted Google support-form evidence and identify the available official Merchant Center support routes without creating, linking, or inventing a Google Ads Customer ID.
+- [x] Select an owner-approved email-marketing platform and verify its Shopify event and consent capabilities before customer data or outreach is activated.
+- [x] Create and authorize the owner’s Klaviyo account before connecting Shopify data or enabling any lifecycle email flow.
+- [x] Add a clear, consent-based Nestwell email-signup capture and preference disclosure to the storefront.
+- [x] Connect the approved marketing platform to the existing Shopify store without disrupting the live catalogue, checkout, or Google product connection.
+- [x] Capture the approved storefront events needed for product-view, cart, and product-interest lifecycle triggers.
+- [ ] Configure consent-safe Welcome, Abandoned Cart, Browse Abandonment, Product Abandonment, and Back-in-Stock flows with factual Nestwell product data.
+- [ ] Configure consent-safe Post-Purchase, Thank You, Win-Back, and delivery-timed Review Request flows without fabricating customer reviews or incentives.
+- [ ] Validate flow eligibility, suppression, unsubscribe, product-availability, and non-purchase safeguards before any live customer messaging is enabled.
+- [x] Re-verify Shopify’s Google & YouTube channel and active product source after Klaviyo setup, then record direct visible evidence that the existing Google connection remains intact.

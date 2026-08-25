@@ -3,6 +3,8 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import type { Product } from "@/lib/store";
 import { normalizeCartQuantity } from "@shared/cartQuantity";
+import { trackAddedToCart } from "@/lib/klaviyo";
+import { useRef } from "react";
 
 type Cart = {
   id: string;
@@ -35,6 +37,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useState<Cart | null>(null);
   const [open, setOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const pendingAdd = useRef<{ product: Product; variantId: string; quantity: number } | null>(null);
   const utils = trpc.useUtils();
 
   useEffect(() => {
@@ -48,6 +51,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [cartQuery.data]);
 
   const onCart = (next: Cart) => {
+    const pending = pendingAdd.current;
+    if (pending) {
+      const variant = pending.product.variants.find(item => item.id === pending.variantId);
+      if (variant) trackAddedToCart({ productId: pending.product.id, variantId: pending.variantId, title: pending.product.title, price: variant.price.amount, currencyCode: variant.price.currencyCode, handle: pending.product.handle }, pending.quantity);
+      pendingAdd.current = null;
+    }
     setCart(next);
     setCartId(next.id);
     window.localStorage.setItem(CART_STORAGE_KEY, next.id);
@@ -66,6 +75,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     addProduct: (product, variantId, quantity = 1) => {
       if (!variantId) return toast.error("Select an available option before adding to cart.");
       const selectedQuantity = normalizeCartQuantity(quantity);
+      pendingAdd.current = { product, variantId, quantity: selectedQuantity };
       if (cartId) addLine.mutate({ cartId, variantId, quantity: selectedQuantity });
       else create.mutate({ variantId, quantity: selectedQuantity });
       setOpen(true);

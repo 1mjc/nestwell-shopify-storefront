@@ -1,0 +1,74 @@
+# Nestwell Lifecycle Automation Assessment
+
+**Status:** Planning only. No customer data, email platform, customer message, review request, or new sales channel has been activated.
+
+## Scope
+
+The requested customer experience includes ten event-driven lifecycle flows: Welcome, Abandoned Cart, Browse Abandonment, Post-Purchase, Customer Thank You, Win-Back, Review Request, Back-in-Stock, and Product Abandonment. A complete implementation needs a marketing platform that can receive Shopify order/inventory data and receive consent-aware behavioural events from Nestwell’s separate headless storefront.
+
+## Viable implementation options
+
+| Approach | Coverage and customer experience | Trade-offs | Cost | Setup complexity |
+|---|---|---|---|---|
+| **Full lifecycle platform — Klaviyo connected to Shopify** | Can support the complete requested flow set, including Shopify-supported back-in-stock alerts, product/cart behaviour, post-purchase, win-back, and delivery-timed review requests. The storefront can add a branded opt-in form and only send the approved events after consent. | Requires a Klaviyo account, an approved app connection, and a small storefront tracking integration because Nestwell’s customer-facing site is headless rather than a Shopify theme. Customer messages must be built, reviewed, and explicitly activated. | Plan-dependent; confirm current Klaviyo plan and sender setup before activation. | Moderate. |
+| **Shopify-native marketing only** | Supports Shopify’s native abandoned-checkout recovery and basic marketing email with minimal technical work. It is a lightweight start for checkout recovery and email capture. | Does **not** provide the requested complete lifecycle set on its own, particularly browse/product abandonment, full back-in-stock, delivery-timed reviews, and nuanced win-back flows. | Included or plan-dependent within the existing Shopify ecosystem; confirm current merchant entitlements in Admin. | Low. |
+
+## Event and storefront constraints
+
+Nestwell’s public storefront is a React application hosted separately from Shopify, while checkout, orders, products, inventory, and customer records are powered by the existing Shopify store. The selected lifecycle platform must therefore be connected to Shopify for commerce-side data and deliberately instrumented on the Nestwell storefront for consent-aware product-view, add-to-cart, email-subscription, and product-interest events. The full lifecycle option should use direct integration mechanisms rather than a scheduled poller; each event is timely and deterministic.
+
+Klaviyo documents that Shopify `Added to Cart` and `Viewed Product` tracking depends on enabled behavioural/on-site tracking, and that tracking can be restricted by a visitor’s privacy consent. It also documents native Shopify support for a back-in-stock subscription event and stock-aware sending.[1][2]
+
+## Verified account state — 2026-08-25
+
+The owner created the **Nestwell** Klaviyo account, and the Klaviyo Integrations view shows the existing **Shopify** integration as **Enabled**. Klaviyo’s onboarding also created an **Email List** and recommended lifecycle-flow templates. The account’s 6-character public site ID is set through the project environment and has passed a non-emitting browser-client load check. No private API key has been created, copied, or used.
+
+The implementation must keep all message actions in draft/manual state until the owner explicitly selects a live launch. The account view can show recommended template actions with prefilled status labels; those recommendations are not treated as approval to send customer email.
+
+## Verified implementation details
+
+Klaviyo’s official client subscription endpoint accepts a public site ID, requires the `application/vnd.api+json` content type and a revision header, and returns `202` when an explicit email-consent request is accepted. Nestwell’s existing `Email List` has ID `Uik6hB`, uses **double opt-in**, and has Nestwell / `nestwell.ca@proton.me` configured as its default sender and reply address. The site’s footer uses that client-only endpoint; it never uses a private API key.
+
+For unavailable Shopify variants, Klaviyo’s client Back in Stock endpoint accepts an email and the catalog variant ID in the documented form `$shopify:::$default:::<numeric Shopify variant ID>`. This queues only the requested variant and requires a separate Back in Stock flow before any future alert can be delivered. The public product page implements the request mechanism, but does not turn an email flow live.[7][8]
+
+## First configured draft flow — 2026-08-25
+
+The Klaviyo flow library’s “recommended” cards are previews; their displayed statuses do **not** represent active Nestwell automations. To avoid activating a template accidentally, the implementation created a separate saved flow, **Nestwell · Welcome Series (Draft)** (`RCbCUX`). It is triggered once when a profile is added to `Email List`, which is double opt-in, and is configured with **no re-entry**.
+
+Its first action remains **Draft**. The saved subject is “Welcome to a quieter kind of comfort” and the saved preview text is “A small note from Nestwell, plus a place to begin.” The body has not been activated or sent. This establishes the correct model for all remaining lifecycle flows: explicit trigger, recipient safeguards, draft message action, test review, then a separate owner-approved Live decision.
+
+## Safeguards built into the plan
+
+| Safeguard | Planned rule |
+|---|---|
+| Email permission | Only send marketing messages to people who have given the required marketing permission. Present a clear sign-up disclosure and an accessible unsubscribe path. Treat this design as a compliance baseline, not legal advice; have Canadian counsel review final CASL/privacy language. |
+| Behavioural tracking | Do not send product-view, cart, or product-interest events until the visitor has given the necessary functional/marketing-cookie consent in the applicable region. |
+| Purchase suppressions | Recovery flows stop when an order is placed. Post-purchase and thank-you flows exclude cancelled/refunded orders where the chosen platform supports the data. |
+| Review integrity | Send a genuine feedback/review request only after delivery or a conservative fulfilment delay. Never create, seed, or display reviews. Any future incentive must be available regardless of review sentiment and transparently labelled where the review platform requires it. |
+| Back-in-stock accuracy | Allow shoppers to explicitly request a restock alert for a specific product/variant. Do not advertise stock availability before the inventory source confirms it. |
+| Sending pressure | Limit each early lifecycle flow to concise, staged messages; use suppression and frequency controls to avoid overlapping recovery or promotional email. |
+
+## Proposed flow map for the full-lifecycle option
+
+| Flow | Primary trigger | Initial safe message plan | Key suppression / control |
+|---|---|---|---|
+| Welcome | Explicit email-list subscription | Brand introduction, how Nestwell works, core collections, and support/policy links. | Do not send before subscription consent. |
+| Abandoned Cart | Identified subscriber adds a product but does not purchase | Product reminder and cart return path; no unsupported scarcity claims. | Stop after purchase; do not overlap checkout recovery. |
+| Browse Abandonment | Consented, identified subscriber views a product without adding it | Product reminder with factual product details. | Cap frequency and stop after add-to-cart or purchase. |
+| Product Abandonment | High-intent product behaviour defined in the selected platform | Address factual hesitation points such as shipping, returns, and support access. | Do not duplicate Browse Abandonment for the same product/event window. |
+| Post-Purchase | Confirmed Shopify order | Thank the customer, summarize next steps, and set factual fulfilment expectations. | Exclude orders that are cancelled before send. |
+| Customer Thank You | Short delay after a confirmed purchase | Relationship-focused note with relevant collection discovery. | One per order or a controlled repeat-customer rule. |
+| Win-Back | No purchase for owner-approved period | Gentle reminder of Nestwell’s catalogue and current policy terms. | Suppress unengaged or unsubscribed profiles. |
+| Review Request | Delivered order or conservative post-fulfilment delay | Ask for honest feedback and route it to an approved review tool. | No request before likely delivery; never fabricate social proof. |
+| Back-in-Stock | Shopper explicitly subscribes to unavailable item | Notify only when that same product/variant returns to available stock. | Product/variant-specific queue and inventory threshold. |
+
+## References
+
+[1]: https://help.klaviyo.com/hc/en-us/articles/6985692431259 "Klaviyo Help Center — Troubleshooting added to cart tracking"
+[2]: https://help.klaviyo.com/hc/en-us/articles/360051612551 "Klaviyo Help Center — Understanding how back in stock flows work"
+[3]: https://help.klaviyo.com/hc/en-us/articles/115003872251 "Klaviyo Help Center — How to build a back in stock flow"
+[4]: https://help.klaviyo.com/hc/en-us/articles/16319809379611 "Klaviyo Help Center — How to request reviews from customers with Klaviyo Reviews flows"
+[5]: https://help.klaviyo.com/hc/en-us/articles/115002779391 "Klaviyo Help Center — How to create a third-party product review flow"
+[6]: https://help.shopify.com/en/manual/promoting-marketing/create-marketing/abandoned-checkouts "Shopify Help Center — Recovering abandoned checkouts"
+[7]: https://developers.klaviyo.com/en/reference/create_client_subscription "Klaviyo Developers — Create Client Subscription"
+[8]: https://developers.klaviyo.com/en/docs/how_to_set_up_custom_back_in_stock "Klaviyo Developers — Set up back in stock via API"

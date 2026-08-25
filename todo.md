@@ -119,7 +119,7 @@
 - [x] Add a refined, accessible Nestwell welcome popup that collects an explicit email opt-in for the existing Klaviyo double-opt-in list.
 - [x] Add popup frequency, dismissal, success, error, and reduced-motion safeguards so the email capture does not disrupt browsing.
 - [x] Correct the welcome-popup dismissal timestamp model, add reduced-motion handling, and re-run popup QA before closing safeguard validation.
-- [ ] Re-validate the complete lifecycle configuration with every Klaviyo flow and message remaining in Draft status.
+- [x] Re-validate the complete lifecycle configuration with every Klaviyo flow and message remaining in Draft status.
 - [ ] Verify the consent-gated Nestwell cart event appears in Klaviyo before connecting the Abandoned Cart Draft, then add purchase suppression without misclassifying checkout events.
 - [x] Configure the owner-approved 14-day post-fulfillment buffer and a direct reply-to-Nestwell feedback destination for the Review Request Draft before any activation decision.
 - [x] Configure the Review Request Draft’s verified reply-to sender and email body to invite direct, honest feedback to Nestwell without a review-platform link or incentive.

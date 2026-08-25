@@ -106,3 +106,15 @@ The dismissal repair was validated on 2026-08-25: local storage now holds the po
 ## Review-request draft — 2026-08-25
 
 **Nestwell · Review Request (Draft)** (`RAYmLm`) is saved with Shopify **Fulfilled Order** as the conservative available trigger and an email-only Draft action titled “Review request · How has it been?” The subject is “How has your Nestwell item been?” and the preview is “Your honest feedback helps us improve.” No review, rating, incentive, or fabricated testimonial was created. The request remains Draft-only and needs a delivery-timing delay plus an actual review destination before it may be considered for activation; Fulfilled Order is not treated as proof of delivery.
+
+The owner confirmed the planned feedback path on 2026-08-25: after a **14-day post-fulfillment buffer**, the draft email should invite the customer to **reply directly to Nestwell** with honest feedback rather than linking to a review platform. This remains a planning and Draft-only instruction until the flow configuration and launch-gate review are complete.
+
+The Draft flow’s sequencing was corrected on 2026-08-25. The initial unsent email action was removed and recreated after the saved **Wait 14 days** action. The current canvas is therefore **Fulfilled Order → Wait 14 days → Review request email (Draft)**. The recreated Draft email retains the neutral name, subject “How has your Nestwell item been?”, and preview “Your honest feedback helps us improve.” No email or SMS was sent during the correction.
+
+## Klaviyo Draft-status audit — 2026-08-25
+
+The Klaviyo Flows list directly showed all eight saved Nestwell automations in **Draft**: Welcome Series, Post-Purchase Care, Customer Thank You, Customer Win-Back, Back-in-Stock Alert, Browse Abandonment, Review Request, and Abandoned Cart. The visible trigger list also confirmed that Abandoned Cart remains intentionally untriggered, while the other flows retain their documented list, product-view, stock-interest, fulfilment, or order signals. No row was displayed as Live and no SMS flow was created.
+
+## Product-Abandonment draft — 2026-08-25
+
+**Nestwell · Product Abandonment (Draft)** (`VzNap4`) is saved as an untriggered Draft. It is intentionally separate from Browse Abandonment and has no message action because the current available product-view metric does not, by itself, establish the stronger interest or non-purchase condition required for a truthful product-abandonment reminder. No customer message or SMS is configured.

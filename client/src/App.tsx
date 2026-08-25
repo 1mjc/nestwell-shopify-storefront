@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartDrawer } from "@/components/storefront";
+import { WelcomePopup } from "@/components/LifecycleCapture";
 import { CartProvider } from "@/contexts/CartContext";
 import CollectionPage from "@/pages/CollectionPage";
 import NotFound from "@/pages/NotFound";
@@ -46,6 +47,7 @@ function App() {
             <Toaster />
             <Router />
             <CartDrawer />
+            <WelcomePopup />
           </CartProvider>
         </TooltipProvider>
       </ThemeProvider>

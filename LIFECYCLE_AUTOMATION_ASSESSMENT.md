@@ -37,6 +37,10 @@ The Klaviyo flow library’s “recommended” cards are previews; their display
 
 Its first action remains **Draft**. The saved subject is “Welcome to a quieter kind of comfort” and the saved preview text is “A small note from Nestwell, plus a place to begin.” The body has not been activated or sent. This establishes the correct model for all remaining lifecycle flows: explicit trigger, recipient safeguards, draft message action, test review, then a separate owner-approved Live decision.
 
+## Second configured draft flow — 2026-08-25
+
+The implementation also created **Nestwell · Post-Purchase Care (Draft)** (`XxgjAf`) against the native Shopify **Placed Order** metric. It is currently set to **no re-entry** and has no trigger/profile filters; these settings are intentionally conservative until product, order-state, and consent suppression rules are validated. Its first action remains **Draft**, with the saved subject “A few notes for your new comfort” and preview text “Helpful care guidance from Nestwell.” No customer has received it.
+
 ## Safeguards built into the plan
 
 | Safeguard | Planned rule |
@@ -72,3 +76,17 @@ Its first action remains **Draft**. The saved subject is “Welcome to a quieter
 [6]: https://help.shopify.com/en/manual/promoting-marketing/create-marketing/abandoned-checkouts "Shopify Help Center — Recovering abandoned checkouts"
 [7]: https://developers.klaviyo.com/en/reference/create_client_subscription "Klaviyo Developers — Create Client Subscription"
 [8]: https://developers.klaviyo.com/en/docs/how_to_set_up_custom_back_in_stock "Klaviyo Developers — Set up back in stock via API"
+
+## Welcome popup QA — 2026-08-25
+
+The sitewide popup was visually checked at desktop and mobile viewports. It opens as a focus-managed dialog after a short client-side delay, presents explicit marketing consent plus an optional personalization checkbox, links the Privacy Policy, and exposes a **Not now** dismissal. Its fourteen-day local dismissal rule is covered by Vitest; a successful signup suppresses it for 180 days. The popup uses only the Klaviyo public site identifier and the established double-opt-in list. It does not enable a Klaviyo marketing flow or change any existing email action from Draft.
+
+The dismissal repair was validated on 2026-08-25: local storage now holds the popup’s **next eligible timestamp**, and the display decision compares the current time directly against that timestamp. Reduced-motion visitors bypass the opening delay and the popup’s animation/transition styles are disabled by the corresponding media query. Desktop and mobile visual checks, the 44-test suite, and the production client, SSR, and server builds passed after this repair.
+
+## Customer Thank You draft — 2026-08-25
+
+**Nestwell · Customer Thank You (Draft)** (`S6gDVn`) is saved with the native Shopify **Placed Order** metric and **no re-entry**. Its first email action remains **Draft** with the subject “Thank you for choosing Nestwell” and preview “A quiet thank-you from Nestwell.” No message body has been activated and no customer email has been sent.
+
+## Customer Win-Back draft — 2026-08-25
+
+**Nestwell · Customer Win-Back (Draft)** (`RmUAT2`) is saved with the native Shopify **Placed Order** metric and remains entirely Draft. The required inactivity delay and the subsequent draft email still need to be configured before this flow can be treated as launch-ready; this separation deliberately prevents an immediate or misleading win-back message.

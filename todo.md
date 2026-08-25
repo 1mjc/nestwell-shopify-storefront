@@ -112,3 +112,7 @@
 - [ ] Configure consent-safe Post-Purchase, Thank You, Win-Back, and delivery-timed Review Request flows without fabricating customer reviews or incentives.
 - [ ] Validate flow eligibility, suppression, unsubscribe, product-availability, and non-purchase safeguards before any live customer messaging is enabled.
 - [x] Re-verify Shopify’s Google & YouTube channel and active product source after Klaviyo setup, then record direct visible evidence that the existing Google connection remains intact.
+- [x] Add a refined, accessible Nestwell welcome popup that collects an explicit email opt-in for the existing Klaviyo double-opt-in list.
+- [x] Add popup frequency, dismissal, success, error, and reduced-motion safeguards so the email capture does not disrupt browsing.
+- [x] Correct the welcome-popup dismissal timestamp model, add reduced-motion handling, and re-run popup QA before closing safeguard validation.
+- [ ] Re-validate the complete lifecycle configuration with every Klaviyo flow and message remaining in Draft status.

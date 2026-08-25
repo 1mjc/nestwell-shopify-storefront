@@ -95,7 +95,7 @@ async function clientPost(path: string, body: Record<string, unknown>) {
   if (!response.ok) throw new Error("We could not save your request. Please try again.");
 }
 
-export async function subscribeToNestwellEmails(email: string, personalization: boolean) {
+export async function subscribeToNestwellEmails(email: string, personalization: boolean, source = "Nestwell storefront footer signup") {
   const normalizedEmail = normalizeEmail(email);
   if (!/^\S+@\S+\.\S+$/.test(normalizedEmail)) throw new Error("Enter a valid email address.");
 
@@ -103,7 +103,7 @@ export async function subscribeToNestwellEmails(email: string, personalization: 
     data: {
       type: "subscription",
       attributes: {
-        custom_source: "Nestwell storefront footer signup",
+        custom_source: source,
         profile: {
           data: {
             type: "profile",

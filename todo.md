@@ -129,6 +129,11 @@
 - [ ] Configure an owner-safe Win-Back Draft delay and message only with explicit marketing-consent and new-order suppression safeguards.
 - [ ] Add and verify explicit marketing-consent eligibility plus a new-order-after-delay suppression condition before creating the Win-Back Draft email action.
 - [x] Preserve the Customer Win-Back flow as an owner-approved message-free Draft until explicit marketing-consent eligibility and new-order suppression are verifiably configured.
+- [ ] Obtain the owner-controlled test email and capture only its explicit double-opt-in signup, product-view, and cart events with every lifecycle flow remaining Draft.
+- [ ] Confirm the test profile’s event visibility in Klaviyo before connecting an Abandoned Cart Draft trigger or altering any recovery suppression.
+- [ ] Diagnose and repair the missing Klaviyo custom product/cart metric registration observed after the owner-authorized consented test, then re-run only the controlled test profile.
+- [ ] Re-run the owner-authorized test profile after the published direct client-event repair and verify the new custom metrics before connecting any recovery Draft trigger.
+- [x] Preserve server-rendered test compatibility for the Klaviyo client-event payload while retaining the browser product URL in live tracking.
 - [x] Audit every public storefront, policy, operational, and Draft lifecycle-email reference before applying the owner-approved Nestwell email routing.
 - [x] Replace general and marketing-facing public references with hello@wenestwell.com and support-inquiry references with support@wenestwell.com.
 - [x] Configure the owner-confirmed existing hello@wenestwell.com mailbox for Draft general/marketing communication and support@wenestwell.com for Draft support replies; do not create any additional mailbox, subdomain, or DNS record.

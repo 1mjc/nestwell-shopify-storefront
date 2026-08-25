@@ -45,12 +45,17 @@ function numericShopifyId(id: string) {
   return /^\d+$/.test(segment) ? segment : "";
 }
 
+function browserProductUrl(handle: string) {
+  const path = `/products/${handle}`;
+  return typeof window === "undefined" ? path : `${window.location.origin}${path}`;
+}
+
 function klaviyoItem(item: CommerceItem) {
   return {
     ProductID: numericShopifyId(item.productId),
     VariantID: numericShopifyId(item.variantId),
     ProductName: item.title,
-    ProductURL: `${window.location.origin}/products/${item.handle}`,
+    ProductURL: browserProductUrl(item.handle),
     Price: Number(item.price),
     Currency: item.currencyCode,
   };
@@ -129,13 +134,31 @@ export async function subscribeToNestwellEmails(email: string, personalization: 
 async function trackConsentedEvent(name: string, item: CommerceItem, quantity?: number) {
   if (!hasPersonalizationConsent() || !shopperEmail()) return;
   try {
-    const klaviyo = await loadKlaviyo();
-    if (!klaviyo) return;
-    klaviyo.identify({ email: shopperEmail(), "Nestwell personalization consent": true });
-    klaviyo.track(name, { ...klaviyoItem(item), ...(quantity ? { Quantity: quantity } : {}) });
+    await clientPost("/client/events/", clientEventPayload(name, item, shopperEmail(), quantity));
   } catch {
     // Customer shopping must remain usable if a third-party analytics request is unavailable.
   }
+}
+
+function clientEventPayload(name: string, item: CommerceItem, email: string, quantity?: number) {
+  return {
+    data: {
+      type: "event",
+      attributes: {
+        properties: { ...klaviyoItem(item), ...(quantity ? { Quantity: quantity } : {}) },
+        metric: { data: { type: "metric", attributes: { name } } },
+        profile: {
+          data: {
+            type: "profile",
+            attributes: {
+              email: normalizeEmail(email),
+              properties: { "Nestwell personalization consent": true },
+            },
+          },
+        },
+      },
+    },
+  };
 }
 
 export function trackViewedProduct(item: CommerceItem) {
@@ -166,4 +189,4 @@ export async function subscribeToRestockAlert(email: string, variantId: string) 
   });
 }
 
-export const klaviyoForTest = { numericShopifyId };
+export const klaviyoForTest = { numericShopifyId, clientEventPayload };

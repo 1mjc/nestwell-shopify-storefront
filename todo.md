@@ -111,6 +111,8 @@
 - [ ] Configure consent-safe Welcome, Abandoned Cart, Browse Abandonment, Product Abandonment, and Back-in-Stock flows with factual Nestwell product data.
 - [x] Configure the consent-triggered Welcome Series Draft body with clear preference and unsubscribe language, retaining hello@wenestwell.com and Draft status.
 - [ ] Configure consent-safe Post-Purchase, Thank You, Win-Back, and delivery-timed Review Request flows without fabricating customer reviews or incentives.
+- [x] Configure the Draft Customer Thank You email with factual appreciation and support guidance while retaining hello@wenestwell.com and Draft status.
+- [x] Configure the Draft Post-Purchase Care email with factual tracking, care, and support guidance while retaining hello@wenestwell.com and Draft status.
 - [ ] Validate flow eligibility, suppression, unsubscribe, product-availability, and non-purchase safeguards before any live customer messaging is enabled.
 - [x] Re-verify Shopify’s Google & YouTube channel and active product source after Klaviyo setup, then record direct visible evidence that the existing Google connection remains intact.
 - [x] Add a refined, accessible Nestwell welcome popup that collects an explicit email opt-in for the existing Klaviyo double-opt-in list.

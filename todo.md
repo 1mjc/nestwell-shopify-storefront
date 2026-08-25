@@ -122,6 +122,7 @@
 - [x] Correct the welcome-popup dismissal timestamp model, add reduced-motion handling, and re-run popup QA before closing safeguard validation.
 - [x] Re-validate the complete lifecycle configuration with every Klaviyo flow and message remaining in Draft status.
 - [ ] Verify the consent-gated Nestwell cart event appears in Klaviyo before connecting the Abandoned Cart Draft, then add purchase suppression without misclassifying checkout events.
+- [x] Attach the verified Nestwell Added to Cart metric to the message-free, no-re-entry Abandoned Cart Draft without activating delivery.
 - [x] Configure the owner-approved 14-day post-fulfillment buffer and a direct reply-to-Nestwell feedback destination for the Review Request Draft before any activation decision.
 - [x] Configure the Review Request Draft’s verified reply-to sender and email body to invite direct, honest feedback to Nestwell without a review-platform link or incentive.
 - [ ] Configure the Product Abandonment Draft only after a measurable stronger-interest condition and non-purchase suppression can be applied.
@@ -129,10 +130,10 @@
 - [ ] Configure an owner-safe Win-Back Draft delay and message only with explicit marketing-consent and new-order suppression safeguards.
 - [ ] Add and verify explicit marketing-consent eligibility plus a new-order-after-delay suppression condition before creating the Win-Back Draft email action.
 - [x] Preserve the Customer Win-Back flow as an owner-approved message-free Draft until explicit marketing-consent eligibility and new-order suppression are verifiably configured.
-- [ ] Obtain the owner-controlled test email and capture only its explicit double-opt-in signup, product-view, and cart events with every lifecycle flow remaining Draft.
-- [ ] Confirm the test profile’s event visibility in Klaviyo before connecting an Abandoned Cart Draft trigger or altering any recovery suppression.
-- [ ] Diagnose and repair the missing Klaviyo custom product/cart metric registration observed after the owner-authorized consented test, then re-run only the controlled test profile.
-- [ ] Re-run the owner-authorized test profile after the published direct client-event repair and verify the new custom metrics before connecting any recovery Draft trigger.
+- [x] Obtain the owner-controlled test email and capture only its explicit double-opt-in signup, product-view, and cart events with every lifecycle flow remaining Draft.
+- [x] Confirm the test profile’s event visibility in Klaviyo before connecting an Abandoned Cart Draft trigger or altering any recovery suppression.
+- [x] Diagnose and repair the missing Klaviyo custom product/cart metric registration observed after the owner-authorized consented test, then re-run only the controlled test profile.
+- [x] Re-run the owner-authorized test profile after the published direct client-event repair and verify the new custom metrics before connecting any recovery Draft trigger.
 - [x] Preserve server-rendered test compatibility for the Klaviyo client-event payload while retaining the browser product URL in live tracking.
 - [x] Audit every public storefront, policy, operational, and Draft lifecycle-email reference before applying the owner-approved Nestwell email routing.
 - [x] Replace general and marketing-facing public references with hello@wenestwell.com and support-inquiry references with support@wenestwell.com.

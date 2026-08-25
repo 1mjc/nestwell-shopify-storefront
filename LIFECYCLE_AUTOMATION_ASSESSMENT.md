@@ -155,6 +155,10 @@ Controlled custom-event repair, 2026-08-25: the initial owner-authorized product
 
 Endpoint normalization follow-up, 2026-08-25: the controlled retest initially still did not create a visible custom metric. The public endpoint was then normalized from `/client/events/` to Klaviyo’s documented `/client/events` route. The endpoint contract is now covered by an explicit unit test; the full suite passes **46 tests**, and the production client, SSR, and server builds pass. A final controlled post-publish retest remains required; the Cart and Product Abandonment Drafts stay untriggered and inactive until that readback succeeds.
 
+Controlled metric readback, 2026-08-25: after the endpoint-normalized final test, Klaviyo Metrics directly displayed both **Nestwell Added to Cart** and **Nestwell Product Viewed**, increasing the account’s visible metric count from 20 to 22. The events were produced only by the owner-authorized `hello@wenestwell.com` test profile. No recovery flow was connected, activated, or sent during this verification; the test cart line was removed and the pre-existing cart line preserved.
+
+Abandoned Cart trigger configuration, 2026-08-25: the saved **Nestwell · Abandoned Cart (Draft)** now uses the verified **Nestwell Added to Cart** metric and defaults to **No re-entry**. Its canvas ends immediately after the trigger; no email, SMS, WhatsApp, discount, delay, filter, or active status was added. A purchase-suppression condition remains mandatory before any future message action can be considered.
+
 ## Klaviyo Draft-status audit — 2026-08-25
 
 The Klaviyo Flows list directly showed all eight saved Nestwell automations in **Draft**: Welcome Series, Post-Purchase Care, Customer Thank You, Customer Win-Back, Back-in-Stock Alert, Browse Abandonment, Review Request, and Abandoned Cart. The visible trigger list also confirmed that Abandoned Cart remains intentionally untriggered, while the other flows retain their documented list, product-view, stock-interest, fulfilment, or order signals. No row was displayed as Live and no SMS flow was created.

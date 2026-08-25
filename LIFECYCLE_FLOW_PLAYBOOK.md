@@ -51,6 +51,23 @@
 | Review | How did it fit into your routine? | Honest feedback helps us learn. | Share feedback |
 | Back in stock | It’s available again | The option you asked about has returned. | View availability |
 
+### Review Request Draft Body
+
+> **Subject:** How has your Nestwell item been?  
+> **Preview:** Your honest feedback helps us improve.
+
+Hello,
+
+We hope your Nestwell item has had time to settle into your routine. If you have a moment, please reply to this email with what has worked well and anything we could improve.
+
+Your honest feedback helps us make more thoughtful choices for future Nestwell customers. There is no rating to select and no reward attached—just a direct conversation with our support team.
+
+With thanks,  
+Nestwell Support  
+support@wenestwell.com
+
+This is an owner-approved **Draft-only** body for the 14-day post-fulfillment Review Request. It must not be activated until the launch gate is completed.
+
 ## Launch gate
 
 Before any email is made Live, the owner must confirm each of the following:

@@ -8,6 +8,10 @@ describe("Klaviyo Shopify variant mapping", () => {
     expect(klaviyoForTest.numericShopifyId("not-a-shopify-gid")).toBe("");
   });
 
+  it("uses Klaviyo’s documented public browser event endpoint", () => {
+    expect(klaviyoForTest.CLIENT_EVENTS_PATH).toBe("/client/events");
+  });
+
   it("builds a public client-event payload for an explicitly consented product/cart interaction", () => {
     expect(
       klaviyoForTest.clientEventPayload(

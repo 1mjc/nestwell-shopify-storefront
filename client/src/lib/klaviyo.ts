@@ -3,6 +3,7 @@ const EMAIL_LIST_ID = "Uik6hB";
 const CONSENT_KEY = "nestwell-marketing-personalization";
 const EMAIL_KEY = "nestwell-marketing-email";
 const KLAVIYO_REVISION = "2026-07-15";
+const CLIENT_EVENTS_PATH = "/client/events";
 
 type CommerceItem = {
   productId: string;
@@ -134,7 +135,7 @@ export async function subscribeToNestwellEmails(email: string, personalization: 
 async function trackConsentedEvent(name: string, item: CommerceItem, quantity?: number) {
   if (!hasPersonalizationConsent() || !shopperEmail()) return;
   try {
-    await clientPost("/client/events/", clientEventPayload(name, item, shopperEmail(), quantity));
+    await clientPost(CLIENT_EVENTS_PATH, clientEventPayload(name, item, shopperEmail(), quantity));
   } catch {
     // Customer shopping must remain usable if a third-party analytics request is unavailable.
   }
@@ -189,4 +190,4 @@ export async function subscribeToRestockAlert(email: string, variantId: string) 
   });
 }
 
-export const klaviyoForTest = { numericShopifyId, clientEventPayload };
+export const klaviyoForTest = { numericShopifyId, clientEventPayload, CLIENT_EVENTS_PATH };

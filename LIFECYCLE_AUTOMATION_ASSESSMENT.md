@@ -159,6 +159,10 @@ Controlled metric readback, 2026-08-25: after the endpoint-normalized final test
 
 Abandoned Cart trigger configuration, 2026-08-25: the saved **Nestwell · Abandoned Cart (Draft)** now uses the verified **Nestwell Added to Cart** metric and defaults to **No re-entry**. Its canvas ends immediately after the trigger; no email, SMS, WhatsApp, discount, delay, filter, or active status was added. A purchase-suppression condition remains mandatory before any future message action can be considered.
 
+Abandoned Cart consent safeguard, 2026-08-25: the Draft trigger was directly read back and corrected to **No re-entry**. Its Profile filter now admits only a person who **can receive email marketing** because that person is **subscribed**. The flow remains message-free and Draft-only; no trigger filter, post-cart delay, purchase-suppression condition, email, SMS, incentive, or activation has been added.
+
+Abandoned Cart timing safeguard, 2026-08-25: a saved **Wait 4 hours** action now follows the verified cart trigger and consent filter. The flow remains Draft-only and ends after that delay. A post-delay purchase-suppression split remains required before a customer-facing recovery action can be added; no email, SMS, discount, activation, checkout, or purchase action has occurred.
+
 ## Klaviyo Draft-status audit — 2026-08-25
 
 The Klaviyo Flows list directly showed all eight saved Nestwell automations in **Draft**: Welcome Series, Post-Purchase Care, Customer Thank You, Customer Win-Back, Back-in-Stock Alert, Browse Abandonment, Review Request, and Abandoned Cart. The visible trigger list also confirmed that Abandoned Cart remains intentionally untriggered, while the other flows retain their documented list, product-view, stock-interest, fulfilment, or order signals. No row was displayed as Live and no SMS flow was created.

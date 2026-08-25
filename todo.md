@@ -120,6 +120,9 @@
 - [x] Configure the owner-approved 14-day post-fulfillment buffer and a direct reply-to-Nestwell feedback destination for the Review Request Draft before any activation decision.
 - [x] Configure the Review Request Draft’s verified reply-to sender and email body to invite direct, honest feedback to Nestwell without a review-platform link or incentive.
 - [ ] Configure the Product Abandonment Draft only after a measurable stronger-interest condition and non-purchase suppression can be applied.
+- [ ] Audit the remaining Win-Back and recovery Drafts for eligible event timing and safe configuration before adding any new email action.
+- [ ] Configure an owner-safe Win-Back Draft delay and message only with explicit marketing-consent and new-order suppression safeguards.
+- [ ] Add and verify explicit marketing-consent eligibility plus a new-order-after-delay suppression condition before creating the Win-Back Draft email action.
 - [x] Audit every public storefront, policy, operational, and Draft lifecycle-email reference before applying the owner-approved Nestwell email routing.
 - [x] Replace general and marketing-facing public references with hello@wenestwell.com and support-inquiry references with support@wenestwell.com.
 - [x] Configure the owner-confirmed existing hello@wenestwell.com mailbox for Draft general/marketing communication and support@wenestwell.com for Draft support replies; do not create any additional mailbox, subdomain, or DNS record.

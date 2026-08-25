@@ -129,6 +129,8 @@ The sender audit and migration completed for every Draft flow that currently con
 
 Draft-status validation, 2026-08-25: each configured email was reopened directly after its sender save. The Welcome, Post-Purchase Care, Customer Thank You, Back-in-Stock Alert, Browse Abandonment, and Review Request canvases each continued to display **Draft** for both the parent flow and its email action. The general Flows list did not render reliably during a later read-only view, so this record relies on the direct per-flow readbacks rather than inferring status from an incomplete list screen.
 
+Win-Back timing audit, 2026-08-25: the existing Draft flow uses the native Shopify **Placed Order** trigger. A saved **Wait 75 days** action now follows that trigger, matching the planned re-engagement interval. No email or SMS action was added because the flow still requires explicit marketing-consent eligibility and a new-order suppression check after the wait; it must remain Draft-only until those safeguards can be verified.
+
 Legacy-email audit, 2026-08-25: a source and operations scan found no remaining `nestwell.ca@proton.me` reference in active client, server, shared, Google-status, lifecycle, or operations material. The only retained occurrences are dated historical observations in `browser_validation_notes.md`; they are preserved as an audit trail and do not render on the public site, configure an active account setting, or appear in a Draft email sender/reply field.
 
 ## Klaviyo Draft-status audit — 2026-08-25

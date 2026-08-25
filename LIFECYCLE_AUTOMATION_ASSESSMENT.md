@@ -131,6 +131,10 @@ Draft-status validation, 2026-08-25: each configured email was reopened directly
 
 Win-Back timing audit, 2026-08-25: the existing Draft flow uses the native Shopify **Placed Order** trigger. A saved **Wait 75 days** action now follows that trigger, matching the planned re-engagement interval. No email or SMS action was added because the flow still requires explicit marketing-consent eligibility and a new-order suppression check after the wait; it must remain Draft-only until those safeguards can be verified.
 
+Win-Back safeguard follow-up, 2026-08-25: the direct Draft canvas readback continues to show only **Placed Order → Wait 75 days → End**. The loaded flow markup confirms that sequence but exposes no readable consent or profile-filter configuration in the saved page state. The browser control needed to open the trigger-details panel timed out, so no inferred filter was added. The flow remains safely without an email action pending a direct, verifiable filter configuration path.
+
+Win-Back trigger configuration, 2026-08-25: the trigger-details panel was subsequently reopened. The flow had been configured to allow re-entry; this was corrected and saved as **No re-entry**. The panel directly confirms that no trigger filter and no profile filter are currently applied. The flow remains **Placed Order → Wait 75 days → End**, Draft-only, and message-free while an explicit consent-eligibility filter is evaluated.
+
 Legacy-email audit, 2026-08-25: a source and operations scan found no remaining `nestwell.ca@proton.me` reference in active client, server, shared, Google-status, lifecycle, or operations material. The only retained occurrences are dated historical observations in `browser_validation_notes.md`; they are preserved as an audit trail and do not render on the public site, configure an active account setting, or appear in a Draft email sender/reply field.
 
 ## Klaviyo Draft-status audit — 2026-08-25

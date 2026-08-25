@@ -126,7 +126,8 @@
 - [ ] Complete any Klaviyo verification sent only to the owner-confirmed existing hello@wenestwell.com or support@wenestwell.com inbox before selecting either identity in a Draft email.
 - [x] Do not publish Klaviyo DNS records for send.wenestwell.com; the owner declined creation of a technical sending subdomain.
 - [x] Exit or remove the partially configured Klaviyo branded-domain setup without publishing DNS records or verifying the domain.
-- [ ] Update the relevant Shopify and Merchant Center public business-contact settings to the owner-approved Nestwell email routing, without submitting a policy review or changing any advertising setting.
+- [x] Update the relevant Shopify and Merchant Center public business-contact settings to the owner-approved Nestwell email routing, without submitting a policy review or changing any advertising setting.
+- [x] Replace Merchant Center’s legacy customer-service email with hello@wenestwell.com and verify the saved Business info readback without opening a policy review or changing ads settings.
 - [x] Verify the existing Shopify store-contact record uses hello@wenestwell.com and preserves the no-phone-number policy.
 - [x] Audit every actual Klaviyo Draft email action and replace the legacy sender/reply identity using the owner-approved hello/support routing while retaining Draft status.
 - [ ] Capture a before-and-after evidence record for the remaining current-state account surfaces that could expose the former Nestwell email identity.

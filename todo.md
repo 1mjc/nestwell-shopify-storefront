@@ -109,6 +109,7 @@
 - [x] Connect the approved marketing platform to the existing Shopify store without disrupting the live catalogue, checkout, or Google product connection.
 - [x] Capture the approved storefront events needed for product-view, cart, and product-interest lifecycle triggers.
 - [ ] Configure consent-safe Welcome, Abandoned Cart, Browse Abandonment, Product Abandonment, and Back-in-Stock flows with factual Nestwell product data.
+- [x] Configure the Draft Browse Abandonment email with factual, low-pressure product-interest language while retaining hello@wenestwell.com and Draft status.
 - [x] Configure the Draft Back-in-Stock Alert email with factual availability language for explicit stock-interest subscribers while retaining hello@wenestwell.com and Draft status.
 - [x] Configure the consent-triggered Welcome Series Draft body with clear preference and unsubscribe language, retaining hello@wenestwell.com and Draft status.
 - [ ] Configure consent-safe Post-Purchase, Thank You, Win-Back, and delivery-timed Review Request flows without fabricating customer reviews or incentives.

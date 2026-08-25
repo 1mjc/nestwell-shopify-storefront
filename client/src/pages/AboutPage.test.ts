@@ -14,7 +14,7 @@ describe("AboutPage", () => {
     const html = renderToString(createElement(Router, { ssrPath: "/about" }, createElement(AboutPage)));
     expect(html).toContain("online retail store serving customers in Canada");
     expect(html).toContain("processed and fulfilled through the operating partners");
-    expect(html).toContain("nestwell.ca@proton.me");
+    expect(html).toContain("support@wenestwell.com");
     expect(html).toContain("does not claim an affiliation");
     expect(html).not.toContain("Phone number");
   });

@@ -3,7 +3,7 @@ import { useSeo } from "@/hooks/useSeo";
 import { Footer } from "@/pages/Home";
 import React from "react";
 
-const supportEmail = "nestwell.ca@proton.me";
+const supportEmail = "support@wenestwell.com";
 
 export default function AboutPage() {
   useSeo(

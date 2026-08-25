@@ -120,3 +120,12 @@
 - [ ] Configure the owner-approved 14-day post-fulfillment buffer and a direct reply-to-Nestwell feedback destination for the Review Request Draft before any activation decision.
 - [ ] Configure the Review Request Draft’s verified reply-to sender and email body to invite direct, honest feedback to Nestwell without a review-platform link or incentive.
 - [ ] Configure the Product Abandonment Draft only after a measurable stronger-interest condition and non-purchase suppression can be applied.
+- [ ] Audit every public storefront, policy, operational, and Draft lifecycle-email reference before applying the owner-approved Nestwell email routing.
+- [x] Replace general and marketing-facing public references with hello@wenestwell.com and support-inquiry references with support@wenestwell.com.
+- [ ] Use hello@wenestwell.com for general and marketing communication and support@wenestwell.com for support inquiries only after the owner confirms the existing mailboxes are ready; do not create any additional mailbox, subdomain, or DNS record.
+- [x] Do not publish Klaviyo DNS records for send.wenestwell.com; the owner declined creation of a technical sending subdomain.
+- [x] Exit or remove the partially configured Klaviyo branded-domain setup without publishing DNS records or verifying the domain.
+- [ ] Update the relevant Shopify and Merchant Center public business-contact settings to the owner-approved Nestwell email routing, without submitting a policy review or changing any advertising setting.
+- [x] Verify the existing Shopify store-contact record uses hello@wenestwell.com and preserves the no-phone-number policy.
+- [ ] Audit every actual Klaviyo Draft flow and account sender/reply setting for the former email identity, recording direct read-only evidence before selecting a new address.
+- [ ] Capture a before-and-after evidence record for the remaining current-state account surfaces that could expose the former Nestwell email identity.

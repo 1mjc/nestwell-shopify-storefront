@@ -12,6 +12,8 @@ export type PolicySlug =
   | "terms-of-service";
 
 export const CONTACT_PATH = "/contact";
+const GENERAL_EMAIL = "hello@wenestwell.com";
+const SUPPORT_EMAIL = "support@wenestwell.com";
 
 type PolicySection = {
   heading: string;
@@ -50,7 +52,12 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
       {
         heading: "Customer support",
         paragraphs: ["For questions about an order, a product, delivery, or a return, email our customer-support team. Please include your order number whenever you have one. Support replies by email so you have a clear written record of the conversation."],
-        email: "nestwell.ca@proton.me",
+        email: SUPPORT_EMAIL,
+      },
+      {
+        heading: "General enquiries",
+        paragraphs: ["For general Nestwell questions or brand correspondence that is not about an order or support case, email our general inbox."],
+        email: GENERAL_EMAIL,
       },
       {
         heading: "Customer correspondence address",
@@ -82,7 +89,7 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
       {
         heading: "Order updates and delays",
         paragraphs: ["If an order has not arrived within 25 business days, contact our support team with your order number so we can investigate the available delivery information."],
-        email: "nestwell.ca@proton.me",
+        email: SUPPORT_EMAIL,
       },
     ],
   },
@@ -97,7 +104,7 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
       {
         heading: "How to request help",
         paragraphs: ["Email our support team within 30 days of delivery and include your order number, a short description of the issue, and clear photos of the item and packaging where relevant. Please wait for return instructions before sending anything back."],
-        email: "nestwell.ca@proton.me",
+        email: SUPPORT_EMAIL,
       },
       {
         heading: "Available resolutions",
@@ -132,7 +139,7 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
       {
         heading: "Your questions",
         paragraphs: ["If you have a question about information connected to your Nestwell order or account, contact us by email. Include enough detail for us to locate the relevant order without sending payment-card information by email."],
-        email: "nestwell.ca@proton.me",
+        email: SUPPORT_EMAIL,
       },
     ],
   },
@@ -159,7 +166,7 @@ export const POLICY_PAGES: Record<PolicySlug, PolicyPageContent> = {
       {
         heading: "Need help?",
         paragraphs: ["Questions about an order, a policy, or the storefront can be sent to customer support. These terms do not limit consumer rights that cannot legally be excluded."],
-        email: "nestwell.ca@proton.me",
+        email: SUPPORT_EMAIL,
       },
     ],
   },

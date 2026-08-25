@@ -19,7 +19,7 @@ The remaining eligibility decision is now with Google: an owner-approved **Misre
 | Product landing pages | Aligned | Existing Shopify App API offer records submit to `wenestwell.com` product URLs; the prior URL-mismatch issue cleared. |
 | Checkout | Ready | Live cart handoff reaches Shopify Checkout after password protection was disabled. |
 | Customer transparency | Ready | Public Contact, Shipping, Returns, Privacy, and Terms routes are globally linked and use verified business/policy facts. |
-| Merchant business details | Ready | Nestwell identity, Woodbridge address, `https://wenestwell.com`, and `nestwell.ca@proton.me` are configured and reflected publicly. |
+| Merchant business details | Email identity update pending | Nestwell identity, Woodbridge address, and `https://wenestwell.com` remain configured. The legacy public email identity must be replaced in the relevant account and public records before this line can return to Ready. |
 | Returns | Review pending | Merchant Center has Canada / defective-only / no-exchanges policy pointing to the live returns page. Google may take up to 10 days to review the saved policy. |
 | Shipping | Ready | Both active Canada services now show 11–23 total business days, CAD $12 flat shipping, and free shipping over CAD $75; a dynamic sitewide/cart promotion now reflects this offer. |
 | GA4 | Active | Nestwell Store property `G-F0PM857JTW` receives real-time storefront measurement. |

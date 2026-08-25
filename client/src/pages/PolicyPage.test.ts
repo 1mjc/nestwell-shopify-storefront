@@ -23,7 +23,7 @@ describe("public policy routes", () => {
   it("renders the return-policy customer-support route", () => {
     const html = renderToString(createElement(Router, { ssrPath: "/policies/refund-policy" }, createElement(PolicyPage)));
     expect(html).toContain("Returns &amp; refunds");
-    expect(html).toContain("nestwell.ca@proton.me");
+    expect(html).toContain("support@wenestwell.com");
     expect(html).toContain("within 30 days of delivery");
   });
 
@@ -31,7 +31,8 @@ describe("public policy routes", () => {
     const html = renderToString(createElement(Router, { ssrPath: "/contact" }, createElement(ContactPage)));
     expect(CONTACT_PATH).toBe("/contact");
     expect(html).toContain("Contact Nestwell");
-    expect(html).toContain("nestwell.ca@proton.me");
+    expect(html).toContain("support@wenestwell.com");
+    expect(html).toContain("hello@wenestwell.com");
     expect(html).toContain("14-3650 Langstaff Rd Unit #818");
     expect(html).toContain("Woodbridge, Ontario L4L 9A8");
     expect(html).toContain("Customer correspondence address");

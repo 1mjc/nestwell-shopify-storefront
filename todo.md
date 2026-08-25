@@ -116,3 +116,6 @@
 - [x] Add popup frequency, dismissal, success, error, and reduced-motion safeguards so the email capture does not disrupt browsing.
 - [x] Correct the welcome-popup dismissal timestamp model, add reduced-motion handling, and re-run popup QA before closing safeguard validation.
 - [ ] Re-validate the complete lifecycle configuration with every Klaviyo flow and message remaining in Draft status.
+- [ ] Verify the consent-gated Nestwell cart event appears in Klaviyo before connecting the Abandoned Cart Draft, then add purchase suppression without misclassifying checkout events.
+- [ ] Configure a delivery-appropriate delay and a real review destination for the Review Request Draft before any activation decision.
+- [ ] Configure the Product Abandonment Draft only after a measurable stronger-interest condition and non-purchase suppression can be applied.

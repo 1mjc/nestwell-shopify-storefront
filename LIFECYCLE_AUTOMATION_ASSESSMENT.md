@@ -90,3 +90,19 @@ The dismissal repair was validated on 2026-08-25: local storage now holds the po
 ## Customer Win-Back draft — 2026-08-25
 
 **Nestwell · Customer Win-Back (Draft)** (`RmUAT2`) is saved with the native Shopify **Placed Order** metric and remains entirely Draft. The required inactivity delay and the subsequent draft email still need to be configured before this flow can be treated as launch-ready; this separation deliberately prevents an immediate or misleading win-back message.
+
+## Back-in-Stock draft — 2026-08-25
+
+**Nestwell · Back-in-Stock Alert (Draft)** (`WxcYuP`) is saved with the **Subscribed to Back in Stock** metric used by the Nestwell product-page availability request. Its first email action remains **Draft** with the subject “The item you asked about is back in stock” and preview “You asked to hear when it returned.” No message has been activated or delivered.
+
+## Abandoned-cart metric constraint — 2026-08-25
+
+**Nestwell · Abandoned Cart (Draft)** (`RfRQnW`) was created as a blank Draft. Klaviyo currently exposes Shopify checkout/order metrics and API Active on Site / Viewed Product metrics, but the new consent-gated Nestwell cart event has not yet appeared in the flow-trigger selector. The flow is intentionally left without a trigger rather than being incorrectly wired to **Checkout Started** or any other event. A valid cart trigger will be attached only after the intended event is visible in Klaviyo and its post-purchase suppression is configured.
+
+## Browse-Abandonment draft — 2026-08-25
+
+**Nestwell · Browse Abandonment (Draft)** (`Uv8PV6`) is saved with the API **Viewed Product** metric and an email-only Draft action titled “Browse reminder · Still considering it?” The subject is “Still thinking about a little more comfort?” and the preview is “Return when it feels right for you.” An accidental unsent text-message action was removed before any content or delivery configuration; no SMS is configured and no customer message was sent.
+
+## Review-request draft — 2026-08-25
+
+**Nestwell · Review Request (Draft)** (`RAYmLm`) is saved with Shopify **Fulfilled Order** as the conservative available trigger and an email-only Draft action titled “Review request · How has it been?” The subject is “How has your Nestwell item been?” and the preview is “Your honest feedback helps us improve.” No review, rating, incentive, or fabricated testimonial was created. The request remains Draft-only and needs a delivery-timing delay plus an actual review destination before it may be considered for activation; Fulfilled Order is not treated as proof of delivery.

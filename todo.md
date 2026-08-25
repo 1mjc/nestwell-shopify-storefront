@@ -117,8 +117,8 @@
 - [x] Correct the welcome-popup dismissal timestamp model, add reduced-motion handling, and re-run popup QA before closing safeguard validation.
 - [ ] Re-validate the complete lifecycle configuration with every Klaviyo flow and message remaining in Draft status.
 - [ ] Verify the consent-gated Nestwell cart event appears in Klaviyo before connecting the Abandoned Cart Draft, then add purchase suppression without misclassifying checkout events.
-- [ ] Configure the owner-approved 14-day post-fulfillment buffer and a direct reply-to-Nestwell feedback destination for the Review Request Draft before any activation decision.
-- [ ] Configure the Review Request Draft’s verified reply-to sender and email body to invite direct, honest feedback to Nestwell without a review-platform link or incentive.
+- [x] Configure the owner-approved 14-day post-fulfillment buffer and a direct reply-to-Nestwell feedback destination for the Review Request Draft before any activation decision.
+- [x] Configure the Review Request Draft’s verified reply-to sender and email body to invite direct, honest feedback to Nestwell without a review-platform link or incentive.
 - [ ] Configure the Product Abandonment Draft only after a measurable stronger-interest condition and non-purchase suppression can be applied.
 - [x] Audit every public storefront, policy, operational, and Draft lifecycle-email reference before applying the owner-approved Nestwell email routing.
 - [x] Replace general and marketing-facing public references with hello@wenestwell.com and support-inquiry references with support@wenestwell.com.

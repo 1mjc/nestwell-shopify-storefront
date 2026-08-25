@@ -127,6 +127,8 @@ The sender audit and migration completed for every Draft flow that currently con
 
 Draft-status validation, 2026-08-25: each configured email was reopened directly after its sender save. The Welcome, Post-Purchase Care, Customer Thank You, Back-in-Stock Alert, Browse Abandonment, and Review Request canvases each continued to display **Draft** for both the parent flow and its email action. The general Flows list did not render reliably during a later read-only view, so this record relies on the direct per-flow readbacks rather than inferring status from an incomplete list screen.
 
+Legacy-email audit, 2026-08-25: a source and operations scan found no remaining `nestwell.ca@proton.me` reference in active client, server, shared, Google-status, lifecycle, or operations material. The only retained occurrences are dated historical observations in `browser_validation_notes.md`; they are preserved as an audit trail and do not render on the public site, configure an active account setting, or appear in a Draft email sender/reply field.
+
 ## Klaviyo Draft-status audit — 2026-08-25
 
 The Klaviyo Flows list directly showed all eight saved Nestwell automations in **Draft**: Welcome Series, Post-Purchase Care, Customer Thank You, Customer Win-Back, Back-in-Stock Alert, Browse Abandonment, Review Request, and Abandoned Cart. The visible trigger list also confirmed that Abandoned Cart remains intentionally untriggered, while the other flows retain their documented list, product-view, stock-interest, fulfilment, or order signals. No row was displayed as Live and no SMS flow was created.

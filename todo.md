@@ -120,7 +120,7 @@
 - [ ] Configure the owner-approved 14-day post-fulfillment buffer and a direct reply-to-Nestwell feedback destination for the Review Request Draft before any activation decision.
 - [ ] Configure the Review Request Draft’s verified reply-to sender and email body to invite direct, honest feedback to Nestwell without a review-platform link or incentive.
 - [ ] Configure the Product Abandonment Draft only after a measurable stronger-interest condition and non-purchase suppression can be applied.
-- [ ] Audit every public storefront, policy, operational, and Draft lifecycle-email reference before applying the owner-approved Nestwell email routing.
+- [x] Audit every public storefront, policy, operational, and Draft lifecycle-email reference before applying the owner-approved Nestwell email routing.
 - [x] Replace general and marketing-facing public references with hello@wenestwell.com and support-inquiry references with support@wenestwell.com.
 - [x] Configure the owner-confirmed existing hello@wenestwell.com mailbox for Draft general/marketing communication and support@wenestwell.com for Draft support replies; do not create any additional mailbox, subdomain, or DNS record.
 - [ ] Complete any Klaviyo verification sent only to the owner-confirmed existing hello@wenestwell.com or support@wenestwell.com inbox before selecting either identity in a Draft email.

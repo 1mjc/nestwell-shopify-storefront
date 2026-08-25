@@ -122,10 +122,11 @@
 - [ ] Configure the Product Abandonment Draft only after a measurable stronger-interest condition and non-purchase suppression can be applied.
 - [ ] Audit every public storefront, policy, operational, and Draft lifecycle-email reference before applying the owner-approved Nestwell email routing.
 - [x] Replace general and marketing-facing public references with hello@wenestwell.com and support-inquiry references with support@wenestwell.com.
-- [ ] Use hello@wenestwell.com for general and marketing communication and support@wenestwell.com for support inquiries only after the owner confirms the existing mailboxes are ready; do not create any additional mailbox, subdomain, or DNS record.
+- [x] Configure the owner-confirmed existing hello@wenestwell.com mailbox for Draft general/marketing communication and support@wenestwell.com for Draft support replies; do not create any additional mailbox, subdomain, or DNS record.
+- [ ] Complete any Klaviyo verification sent only to the owner-confirmed existing hello@wenestwell.com or support@wenestwell.com inbox before selecting either identity in a Draft email.
 - [x] Do not publish Klaviyo DNS records for send.wenestwell.com; the owner declined creation of a technical sending subdomain.
 - [x] Exit or remove the partially configured Klaviyo branded-domain setup without publishing DNS records or verifying the domain.
 - [ ] Update the relevant Shopify and Merchant Center public business-contact settings to the owner-approved Nestwell email routing, without submitting a policy review or changing any advertising setting.
 - [x] Verify the existing Shopify store-contact record uses hello@wenestwell.com and preserves the no-phone-number policy.
-- [ ] Audit every actual Klaviyo Draft flow and account sender/reply setting for the former email identity, recording direct read-only evidence before selecting a new address.
+- [x] Audit every actual Klaviyo Draft email action and replace the legacy sender/reply identity using the owner-approved hello/support routing while retaining Draft status.
 - [ ] Capture a before-and-after evidence record for the remaining current-state account surfaces that could expose the former Nestwell email identity.

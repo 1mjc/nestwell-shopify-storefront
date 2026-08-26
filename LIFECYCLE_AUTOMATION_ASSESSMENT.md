@@ -209,6 +209,8 @@ Current explicit-tag coverage, 2026-08-26: seven of the nine Draft lifecycle mes
 
 Post-footer final Draft audit, 2026-08-26: a direct Klaviyo Flows-list readback again shows exactly nine Nestwell automations and confirms **Draft** plus **0 conversions** for every row: Abandoned Cart, Back-in-Stock Alert, Browse Abandonment, Customer Thank You, Customer Win-Back, Post-Purchase Care, Product Abandonment, Review Request, and Welcome Series. The displayed triggers remain the intended custom cart/product signals, explicit back-in-stock interest, Shopify order/fulfillment metrics, and the Email List. No Nestwell flow is Live, and no Nestwell SMS flow is present. This is a status readback only; it does not activate a message or resolve the two remaining split-path footer-verification tasks.
 
+Win-Back path check, 2026-08-26: the Customer Win-Back Draft was opened in Klaviyo’s read-only preview mode. The visible path remains **Placed Order → profile filters → Wait 75 days → Split #1**. No profile was selected, no person was enrolled, and preview mode was exited. The split-path email action remains intentionally untouched because the canvas view did not expose it for a safe footer-only edit; this does not alter the documented prior Draft-only configuration or authorize activation.
+
 Per-flow Draft safeguard audit, 2026-08-26. The matrix below distinguishes direct account/editor evidence from documented Klaviyo platform behavior. All rows remain Draft and no sending action has been performed.
 
 | Draft flow | Entry and consent/re-entry safeguard | Delay and activity suppression | Sender, content, and special safeguard | Unsubscribe/preference handling |

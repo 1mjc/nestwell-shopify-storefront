@@ -129,6 +129,8 @@
 - [x] Configure the owner-approved 14-day post-fulfillment buffer and a direct reply-to-Nestwell feedback destination for the Review Request Draft before any activation decision.
 - [x] Configure the Review Request Draft’s verified reply-to sender and email body to invite direct, honest feedback to Nestwell without a review-platform link or incentive.
 - [ ] Configure the Product Abandonment Draft only after a measurable stronger-interest condition and non-purchase suppression can be applied.
+- [ ] Configure the Product Abandonment Draft only for consented profiles with at least two Nestwell Product Viewed events in seven days, then add post-delay cart and purchase suppression before any message action.
+- [x] Configure the Product Abandonment Draft trigger with the verified Product Viewed custom metric, no re-entry, and subscribed email-marketing profile eligibility without adding a message.
 - [ ] Audit the remaining Win-Back and recovery Drafts for eligible event timing and safe configuration before adding any new email action.
 - [ ] Configure an owner-safe Win-Back Draft delay and message only with explicit marketing-consent and new-order suppression safeguards.
 - [ ] Add and verify explicit marketing-consent eligibility plus a new-order-after-delay suppression condition before creating the Win-Back Draft email action.

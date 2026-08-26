@@ -172,3 +172,5 @@ The Klaviyo Flows list directly showed all eight saved Nestwell automations in *
 ## Product-Abandonment draft — 2026-08-25
 
 **Nestwell · Product Abandonment (Draft)** (`VzNap4`) is saved as an untriggered Draft. It is intentionally separate from Browse Abandonment and has no message action because the current available product-view metric does not, by itself, establish the stronger interest or non-purchase condition required for a truthful product-abandonment reminder. No customer message or SMS is configured.
+
+Product Abandonment eligibility safeguard, 2026-08-25: the Draft now uses the verified **Nestwell Product Viewed** custom metric with **No re-entry**. Its saved Profile filter admits only a person who can receive email marketing because that person is subscribed. The canvas has no delay, split, email, SMS, discount, or activation yet; stronger-interest and post-delay non-purchase safeguards remain required before a customer-facing action can be considered.

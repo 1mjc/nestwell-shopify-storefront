@@ -165,6 +165,8 @@ Abandoned Cart timing safeguard, 2026-08-25: a saved **Wait 4 hours** action now
 
 Abandoned Cart purchase-suppression safeguard, 2026-08-25: the post-delay split is saved with its first path requiring **Placed Order zero times since starting this flow**. Consequently, only subscribed profiles with a verified cart event, no re-entry, a four-hour wait, and no subsequent Shopify purchase enter the recovery-eligible path; everyone else exits. The flow remains Draft-only and message-free: no email, SMS, incentive, or activation has been added.
 
+Abandoned Cart email body configuration, 2026-08-25: a text-only Draft email was added only to the consented, four-hour, zero-order recovery-eligible path. Its name is “Cart reminder · Your Nestwell picks,” its subject is “Your Nestwell cart is still waiting,” and its sender/reply-to is `hello@wenestwell.com`. The saved body is low-pressure, asks the recipient to check current availability, options, and pricing before checkout, and directs questions to `support@wenestwell.com`. The direct post-save editor readback shows **Draft** and no active delivery; no discount, urgency, SMS, or activation was added.
+
 ## Klaviyo Draft-status audit — 2026-08-25
 
 The Klaviyo Flows list directly showed all eight saved Nestwell automations in **Draft**: Welcome Series, Post-Purchase Care, Customer Thank You, Customer Win-Back, Back-in-Stock Alert, Browse Abandonment, Review Request, and Abandoned Cart. The visible trigger list also confirmed that Abandoned Cart remains intentionally untriggered, while the other flows retain their documented list, product-view, stock-interest, fulfilment, or order signals. No row was displayed as Live and no SMS flow was created.

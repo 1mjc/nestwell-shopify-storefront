@@ -115,7 +115,13 @@
 - [x] Configure consent-safe Post-Purchase, Thank You, Win-Back, and delivery-timed Review Request flows without fabricating customer reviews or incentives.
 - [x] Configure the Draft Customer Thank You email with factual appreciation and support guidance while retaining hello@wenestwell.com and Draft status.
 - [x] Configure the Draft Post-Purchase Care email with factual tracking, care, and support guidance while retaining hello@wenestwell.com and Draft status.
-- [ ] Validate flow eligibility, suppression, unsubscribe, product-availability, and non-purchase safeguards before any live customer messaging is enabled.
+- [x] Validate flow eligibility, suppression, unsubscribe, product-availability, and non-purchase safeguards before any live customer messaging is enabled.
+- [x] Capture direct Klaviyo evidence that every configured Draft lifecycle email includes or inherits valid unsubscribe/preference handling before any activation decision.
+- [x] Document a per-flow safeguard audit covering unsubscribe handling alongside eligibility, suppression, product availability, and non-purchase controls.
+- [x] Add explicit `{% unsubscribe %}` and `{% manage_preferences %}` handling to representative text-only Draft lifecycle emails while retaining Draft status and no customer delivery.
+- [x] Read back the explicit unsubscribe/preference handling in representative Draft editors and then close the umbrella lifecycle activation gate.
+- [ ] Before any future activation, add explicit `{% unsubscribe %}` and `{% manage_preferences %}` handling to every remaining text-only Draft email or complete a fresh owner-approved controlled rendering check.
+- [ ] Add explicit unsubscribe and preference tags to the remaining seven Draft lifecycle emails, save each as Draft, and read back their resolved footer links without sending any message.
 - [x] Re-verify Shopify’s Google & YouTube channel and active product source after Klaviyo setup, then record direct visible evidence that the existing Google connection remains intact.
 - [x] Add a refined, accessible Nestwell welcome popup that collects an explicit email opt-in for the existing Klaviyo double-opt-in list.
 - [x] Add popup frequency, dismissal, success, error, and reduced-motion safeguards so the email capture does not disrupt browsing.

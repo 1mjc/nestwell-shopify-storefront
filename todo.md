@@ -121,7 +121,9 @@
 - [x] Add explicit `{% unsubscribe %}` and `{% manage_preferences %}` handling to representative text-only Draft lifecycle emails while retaining Draft status and no customer delivery.
 - [x] Read back the explicit unsubscribe/preference handling in representative Draft editors and then close the umbrella lifecycle activation gate.
 - [ ] Before any future activation, add explicit `{% unsubscribe %}` and `{% manage_preferences %}` handling to every remaining text-only Draft email or complete a fresh owner-approved controlled rendering check.
-- [ ] Add explicit unsubscribe and preference tags to the remaining seven Draft lifecycle emails, save each as Draft, and read back their resolved footer links without sending any message.
+- [x] Add explicit unsubscribe and preference tags to seven directly accessible Draft lifecycle emails and save each as Draft without sending any message.
+- [ ] Capture direct post-save rendered-link evidence for the six Draft emails where only raw preference/unsubscribe tags have been read back; retain the Review Request rendered-link record as the current direct reference.
+- [ ] Verify the existing eligible-branch message actions for Customer Win-Back and Product Abandonment before adding their explicit footer tags; do not move, recreate, activate, or otherwise disturb their post-delay suppression paths.
 - [x] Re-verify Shopify’s Google & YouTube channel and active product source after Klaviyo setup, then record direct visible evidence that the existing Google connection remains intact.
 - [x] Add a refined, accessible Nestwell welcome popup that collects an explicit email opt-in for the existing Klaviyo double-opt-in list.
 - [x] Add popup frequency, dismissal, success, error, and reduced-motion safeguards so the email capture does not disrupt browsing.

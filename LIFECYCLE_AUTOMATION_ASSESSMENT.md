@@ -211,6 +211,8 @@ Post-footer final Draft audit, 2026-08-26: a direct Klaviyo Flows-list readback 
 
 Win-Back path check, 2026-08-26: the Customer Win-Back Draft was opened in Klaviyo’s read-only preview mode. The visible path remains **Placed Order → profile filters → Wait 75 days → Split #1**. No profile was selected, no person was enrolled, and preview mode was exited. The split-path email action remains intentionally untouched because the canvas view did not expose it for a safe footer-only edit; this does not alter the documented prior Draft-only configuration or authorize activation.
 
+Product Abandonment path check, 2026-08-26: the Product Abandonment Draft was opened read-only. The visible top-level path remains **Nestwell Product Viewed → profile filters → Wait 1 day → Split #1**, consistent with the documented repeat-interest, consent, cart, and order safeguards. The lower eligible-branch message was not exposed by the canvas for a safe footer-only edit. It remains intentionally untouched; no action was moved, recreated, sent, or activated.
+
 Per-flow Draft safeguard audit, 2026-08-26. The matrix below distinguishes direct account/editor evidence from documented Klaviyo platform behavior. All rows remain Draft and no sending action has been performed.
 
 | Draft flow | Entry and consent/re-entry safeguard | Delay and activity suppression | Sender, content, and special safeguard | Unsubscribe/preference handling |

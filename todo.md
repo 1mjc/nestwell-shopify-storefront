@@ -129,6 +129,7 @@
 - [x] Obtain a final browser-operation confirmation immediately before changing any lifecycle flow from Draft to Live.
 - [x] After final confirmation, activate only the nine named Nestwell lifecycle email flows and verify their live statuses without sending a manual campaign, SMS, discount, or test message.
 - [x] Publish an activation record that logs the confirmed readiness checks, the exact live flow set, and the continuing sender, consent, frequency, and support safeguards.
+- [x] Update the lifecycle safeguard matrix so its heading and status language accurately reflect the owner-authorized Live configuration while preserving the original safeguards.
 - [x] Re-verify Shopify’s Google & YouTube channel and active product source after Klaviyo setup, then record direct visible evidence that the existing Google connection remains intact.
 - [x] Add a refined, accessible Nestwell welcome popup that collects an explicit email opt-in for the existing Klaviyo double-opt-in list.
 - [x] Add popup frequency, dismissal, success, error, and reduced-motion safeguards so the email capture does not disrupt browsing.

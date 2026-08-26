@@ -108,11 +108,11 @@
 - [x] Add a clear, consent-based Nestwell email-signup capture and preference disclosure to the storefront.
 - [x] Connect the approved marketing platform to the existing Shopify store without disrupting the live catalogue, checkout, or Google product connection.
 - [x] Capture the approved storefront events needed for product-view, cart, and product-interest lifecycle triggers.
-- [ ] Configure consent-safe Welcome, Abandoned Cart, Browse Abandonment, Product Abandonment, and Back-in-Stock flows with factual Nestwell product data.
+- [x] Configure consent-safe Welcome, Abandoned Cart, Browse Abandonment, Product Abandonment, and Back-in-Stock flows with factual Nestwell product data.
 - [x] Configure the Draft Browse Abandonment email with factual, low-pressure product-interest language while retaining hello@wenestwell.com and Draft status.
 - [x] Configure the Draft Back-in-Stock Alert email with factual availability language for explicit stock-interest subscribers while retaining hello@wenestwell.com and Draft status.
 - [x] Configure the consent-triggered Welcome Series Draft body with clear preference and unsubscribe language, retaining hello@wenestwell.com and Draft status.
-- [ ] Configure consent-safe Post-Purchase, Thank You, Win-Back, and delivery-timed Review Request flows without fabricating customer reviews or incentives.
+- [x] Configure consent-safe Post-Purchase, Thank You, Win-Back, and delivery-timed Review Request flows without fabricating customer reviews or incentives.
 - [x] Configure the Draft Customer Thank You email with factual appreciation and support guidance while retaining hello@wenestwell.com and Draft status.
 - [x] Configure the Draft Post-Purchase Care email with factual tracking, care, and support guidance while retaining hello@wenestwell.com and Draft status.
 - [ ] Validate flow eligibility, suppression, unsubscribe, product-availability, and non-purchase safeguards before any live customer messaging is enabled.
@@ -137,10 +137,13 @@
 - [x] Remove the newly created Product Abandonment Draft email from the pre-delay path so no message can precede the safeguards.
 - [x] Add the factual Product Abandonment Draft email only below the first, safeguarded post-delay, non-cart, non-purchaser split path.
 - [x] Configure the Product Abandonment Draft trigger with the verified Product Viewed custom metric, no re-entry, and subscribed email-marketing profile eligibility without adding a message.
-- [ ] Audit the remaining Win-Back and recovery Drafts for eligible event timing and safe configuration before adding any new email action.
-- [ ] Configure an owner-safe Win-Back Draft delay and message only with explicit marketing-consent and new-order suppression safeguards.
-- [ ] Add and verify explicit marketing-consent eligibility plus a new-order-after-delay suppression condition before creating the Win-Back Draft email action.
+- [x] Audit the remaining Win-Back and recovery Drafts for eligible event timing and safe configuration before adding any new email action.
+- [x] Configure an owner-safe Win-Back Draft delay and message only with explicit marketing-consent and new-order suppression safeguards.
+- [x] Add and verify explicit marketing-consent eligibility plus a new-order-after-delay suppression condition before creating the Win-Back Draft email action.
 - [x] Preserve the Customer Win-Back flow as an owner-approved message-free Draft until explicit marketing-consent eligibility and new-order suppression are verifiably configured.
+- [x] Configure and verify explicit marketing-consent eligibility on the Klaviyo Win-Back Draft trigger before adding any email action.
+- [x] Add and verify a post-delay new-order suppression condition on the Klaviyo Win-Back Draft so recent purchasers cannot receive re-engagement messaging.
+- [x] Only after those safeguards are verified, add a factual Draft Win-Back email using hello@wenestwell.com and preserve Draft-only status.
 - [x] Obtain the owner-controlled test email and capture only its explicit double-opt-in signup, product-view, and cart events with every lifecycle flow remaining Draft.
 - [x] Confirm the test profile’s event visibility in Klaviyo before connecting an Abandoned Cart Draft trigger or altering any recovery suppression.
 - [x] Diagnose and repair the missing Klaviyo custom product/cart metric registration observed after the owner-authorized consented test, then re-run only the controlled test profile.

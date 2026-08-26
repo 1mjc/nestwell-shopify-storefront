@@ -121,7 +121,8 @@
 - [x] Add popup frequency, dismissal, success, error, and reduced-motion safeguards so the email capture does not disrupt browsing.
 - [x] Correct the welcome-popup dismissal timestamp model, add reduced-motion handling, and re-run popup QA before closing safeguard validation.
 - [x] Re-validate the complete lifecycle configuration with every Klaviyo flow and message remaining in Draft status.
-- [ ] Verify the consent-gated Nestwell cart event appears in Klaviyo before connecting the Abandoned Cart Draft, then add purchase suppression without misclassifying checkout events.
+- [x] Verify the consent-gated Nestwell cart event appears in Klaviyo before connecting the Abandoned Cart Draft, then add purchase suppression without misclassifying checkout events.
+- [x] Capture direct browser-visible Klaviyo evidence that the Nestwell Added to Cart metric exists after the owner-authorized test event, then preserve that evidence before closing cart-event verification.
 - [x] Attach the verified Nestwell Added to Cart metric to the message-free, no-re-entry Abandoned Cart Draft without activating delivery.
 - [x] Add and verify the Abandoned Cart Draft profile filter requiring a subscribed person who can receive email marketing, while retaining no re-entry and no message action.
 - [x] Add a four-hour delay after the consented Abandoned Cart trigger while retaining Draft-only, message-free status.

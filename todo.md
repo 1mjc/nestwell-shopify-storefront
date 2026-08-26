@@ -122,7 +122,12 @@
 - [x] Read back the explicit unsubscribe/preference handling in representative Draft editors and then close the umbrella lifecycle activation gate.
 - [x] Before activation, complete documented unsubscribe/preference readiness through explicit tags where directly accessible and confirmed account-level/automatic-footer handling for the remaining split-path emails.
 - [x] Add explicit unsubscribe and preference tags to seven directly accessible Draft lifecycle emails and save each as Draft without sending any message.
-- [ ] Capture direct post-save rendered-link evidence for the six Draft emails where only raw preference/unsubscribe tags have been read back; retain the Review Request rendered-link record as the current direct reference.
+- [x] Capture direct rendered-link evidence for Welcome Series after its raw preference/unsubscribe tags were saved; retain the Review Request rendered-link record as an additional direct reference.
+- [x] Capture direct rendered-link evidence for Abandoned Cart after its raw preference/unsubscribe tags were saved.
+- [x] Capture direct rendered-link evidence for Back-in-Stock Alert after its raw preference/unsubscribe tags were saved.
+- [x] Capture direct rendered-link evidence for Browse Abandonment after its raw preference/unsubscribe tags were saved.
+- [x] Capture direct rendered-link evidence for Customer Thank You after its raw preference/unsubscribe tags were saved.
+- [x] Capture direct rendered-link evidence for Post-Purchase Care after its raw preference/unsubscribe tags were saved.
 - [ ] Verify the existing eligible-branch message actions for Customer Win-Back and Product Abandonment before adding their explicit footer tags; do not move, recreate, activate, or otherwise disturb their post-delay suppression paths.
 - [x] Recheck all nine lifecycle flows for sender validity, customer-safe content, consent/suppression logic, and Draft status before the authorized activation step.
 - [x] Confirm unsubscribe/preference-link readiness for every lifecycle message through saved explicit tags or Klaviyo’s documented automatic-footer behavior, preserving the two split-path recovery paths unchanged.

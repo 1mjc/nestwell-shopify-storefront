@@ -17,9 +17,13 @@ The connected Shopify store identifies **CAD** as its shop currency and reports 
 
 ## Safe implementation boundary
 
-The existing public site is Canada-only, including the CAD $75 free-shipping message. The user has requested a four-market rollout, but the direct store readback currently supports only Canada and the United States. This project must not publish U.K. or Australian service claims, cross-border delivery estimates, duty statements, free-shipping eligibility, local currency promises, or tax claims without an owner-confirmed Shopify configuration.
+The existing public site is Canada-only, including the CAD $75 free-shipping message. The owner subsequently confirmed that free shipping should apply above CAD $75 in all four requested markets and approved the proposed standard CAD rates below. However, the direct store readback still supports only Canada and the United States, and the permitted Shopify delivery mutation rejected the attempted update because this store uses the newer multi-condition configuration. **No U.K. or Australian zone was added, and no U.S. rate was changed.**
 
-Once the owner confirms the intended U.K. and Australian shipping zones/rates and whether free shipping applies outside Canada, the storefront can accurately publish market availability and checkout guidance. Until then, the only safe global statement is that checkout shows the available delivery options, taxes, and final total for an eligible address.
+The storefront must not publish U.K. or Australian service claims, cross-border delivery estimates, duty statements, free-shipping eligibility, local currency promises, or tax claims until the approved Shopify delivery configuration is saved and re-verified. Until then, the only safe global statement is that checkout shows the available delivery options, taxes, and final total for an eligible address.
+
+## Owner approval and mutation outcome
+
+On 2026-08-29, the owner confirmed the exact proposed rates in this document and confirmed that free shipping over CAD $75 applies to Canada, the United States, the United Kingdom, and Australia. A read-only schema review was completed, followed by an attempted minimal Shopify delivery update for the U.S. threshold and the two new zones. Shopify rejected the operation under the connected integration’s newer delivery-configuration API. The owner must save the approved configuration in Shopify Admin before the storefront can truthfully announce four-market service. No storefront market claim was changed as part of the failed mutation.
 
 ## Existing Shopify delivery-rate readback
 

@@ -135,6 +135,15 @@
 - [x] After final confirmation, activate only the nine named Nestwell lifecycle email flows and verify their live statuses without sending a manual campaign, SMS, discount, or test message.
 - [x] Publish an activation record that logs the confirmed readiness checks, the exact live flow set, and the continuing sender, consent, frequency, and support safeguards.
 - [x] Update the lifecycle safeguard matrix so its heading and status language accurately reflect the owner-authorized Live configuration while preserving the original safeguards.
+- [x] Audit all country-sensitive public copy, shipping/policy content, cart guidance, checkout handoff language, and market-oriented structured data for Canada, the United States, the United Kingdom, and Australia.
+- [ ] Obtain owner confirmation or Shopify configuration for United Kingdom and Australia delivery zones/rates, then verify market, currency, tax, and checkout capabilities for all four requested countries before publishing their customer-facing availability.
+- [ ] Update approved storefront-wide market availability, currency, shipping, and policy guidance using only verified Canada, United States, United Kingdom, and Australia facts.
+- [ ] Add focused test coverage and public-route QA for the approved multi-market guidance, then publish the evidence record.
+- [ ] Define and obtain approval for a standard CAD shipping-rate structure for Canada, the United States, the United Kingdom, and Australia, with free shipping above CAD $75 in every market.
+- [ ] Configure the approved four-market delivery zones and rates in Shopify before publishing a storefront-wide market-availability claim.
+- [ ] Change the United States free-shipping threshold from CAD $100 to CAD $75 while preserving its approved weight-banded standard rates.
+- [ ] Add approved United Kingdom and Australia delivery zones with the confirmed CAD weight-banded standard rates and CAD $75 free-shipping threshold.
+- [ ] Update Canada, United States, United Kingdom, and Australia storefront-wide policy and cart guidance to the verified CAD rate and free-shipping structure.
 - [x] Re-verify Shopify’s Google & YouTube channel and active product source after Klaviyo setup, then record direct visible evidence that the existing Google connection remains intact.
 - [x] Add a refined, accessible Nestwell welcome popup that collects an explicit email opt-in for the existing Klaviyo double-opt-in list.
 - [x] Add popup frequency, dismissal, success, error, and reduced-motion safeguards so the email capture does not disrupt browsing.
@@ -179,3 +188,7 @@
 - [x] Verify the existing Shopify store-contact record uses hello@wenestwell.com and preserves the no-phone-number policy.
 - [x] Audit every actual Klaviyo Draft email action and replace the legacy sender/reply identity using the owner-approved hello/support routing while retaining Draft status.
 - [ ] Capture a before-and-after evidence record for the remaining current-state account surfaces that could expose the former Nestwell email identity.
+
+- [x] Replace the storefront header and footer branding with the supplied Nestwell logo.
+- [x] Update favicon, social metadata, project logo, and any remaining logo references to the supplied Nestwell asset.
+- [x] Run automated tests, responsive visual QA, and publish a checkpoint for the logo update.

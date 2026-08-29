@@ -11,6 +11,7 @@ import type { HeadMeta } from "../../client/src/ssr/prefetch";
 
 const CANONICAL_ORIGIN = (process.env.CANONICAL_ORIGIN || "").replace(/\/$/, "");
 const SITE_NAME = process.env.SITE_NAME || "Nestwell";
+const DEFAULT_OG_IMAGE = "/manus-storage/nestwell-logo_8d500958.png";
 const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const metaText = (value: string, max: number) => {
   const clean = value.replace(/\s+/g, " ").replace(/[#*_`~]+/g, "").trim();
@@ -21,7 +22,8 @@ function buildHeadTags(head: HeadMeta) {
   const title = escapeHtml(metaText(head.title || SITE_NAME, 70));
   const description = escapeHtml(metaText(head.description, 200));
   const canonical = head.canonicalPath && CANONICAL_ORIGIN ? `${CANONICAL_ORIGIN}${head.canonicalPath}` : "";
-  const image = head.ogImage?.startsWith("/") && CANONICAL_ORIGIN ? `${CANONICAL_ORIGIN}${head.ogImage}` : head.ogImage;
+  const imageSource = head.ogImage || DEFAULT_OG_IMAGE;
+  const image = imageSource.startsWith("/") && CANONICAL_ORIGIN ? `${CANONICAL_ORIGIN}${imageSource}` : imageSource;
   const tags = [
     `<title>${title}</title>`,
     `<meta name="description" content="${description}" />`,
@@ -29,7 +31,7 @@ function buildHeadTags(head: HeadMeta) {
     `<meta property="og:title" content="${title}" />`,
     `<meta property="og:description" content="${description}" />`,
     `<meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />`,
-    `<meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${title}" />`,
     `<meta name="twitter:description" content="${description}" />`,
   ];

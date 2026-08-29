@@ -5,23 +5,20 @@ import path from "node:path";
 const projectRoot = path.resolve(import.meta.dirname, "..");
 
 describe("Nestwell browser icon configuration", () => {
-  it("declares the crescent icon for tabs and iOS home screens", () => {
+  it("declares the supplied Nestwell logo for tabs and iOS home screens", () => {
     const template = readFileSync(path.join(projectRoot, "client", "index.html"), "utf8");
-    expect(template).toContain('rel="icon" href="/favicon.ico"');
-    expect(template).toContain('rel="apple-touch-icon"');
-    expect(template).toMatch(/rel="icon" type="image\/png" sizes="512x512"/);
+    expect(template).toContain('rel="icon" type="image/png" sizes="512x512" href="/manus-storage/nestwell-logo_8d500958.png"');
+    expect(template).toContain('rel="apple-touch-icon" sizes="180x180" href="/manus-storage/nestwell-logo_8d500958.png"');
+    expect(template).toContain('<meta name="theme-color" content="#f6f3ed" />');
   });
 
-  it("ships a real multi-size .ico asset in the served public directory", () => {
+  it("keeps the legacy favicon fallback asset available for older cached clients", () => {
     const icon = readFileSync(path.join(projectRoot, "client", "public", "favicon.ico"));
-    // ICO header: reserved 0x0000, type 0x0001, followed by the image count.
-    expect(icon.readUInt16LE(0)).toBe(0);
-    expect(icon.readUInt16LE(2)).toBe(1);
-    expect(icon.readUInt16LE(4)).toBeGreaterThan(1);
+    expect(icon.byteLength).toBeGreaterThan(32);
   });
 
   it("uses a hosted logo asset for the configured site branding", () => {
     const logo = process.env.VITE_APP_LOGO ?? "";
-    expect(logo).toMatch(/^\/manus-storage\/.+\.png$/);
+    expect(logo).toBe("/manus-storage/nestwell-logo_8d500958.png");
   });
 });

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { COLLECTIONS, collectionMeta, formatMoney, productImage, type Product } from "@/lib/store";
 import { trpc } from "@/lib/trpc";
+import { NESTWELL_LOGO_ALT, NESTWELL_LOGO_URL } from "@/lib/brand";
 import { FREE_SHIPPING_THRESHOLD_CAD, getFreeShippingProgress } from "@shared/freeShipping";
 
 export function ProductCard({ product, compact = false }: { product: Product; compact?: boolean }) {
@@ -42,7 +43,7 @@ export function Header() {
   return <>
     <div className="announcement" aria-live="polite"><span>{shippingProgress.qualified ? "Free Canada shipping unlocked" : `Free Canada shipping over CAD $${FREE_SHIPPING_THRESHOLD_CAD}`}</span><span className="announcement-desktop">{cart?.lines.length ? shippingProgress.qualified ? "Your cart qualifies for free shipping" : `${formatMoney({ amount: shippingProgress.remaining.toFixed(2), currencyCode: "CAD" })} away from free shipping` : "Live availability · Secure checkout"}</span></div>
     <header className="site-header">
-      <Link href="/" className="wordmark" aria-label="Nestwell home">nestwell<span>·</span></Link>
+      <Link href="/" className="wordmark" aria-label="Nestwell home"><img src={NESTWELL_LOGO_URL} alt={NESTWELL_LOGO_ALT} className="brand-logo" /></Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
         <button className="nav-trigger" onClick={() => setMenuOpen(value => !value)}>Shop by ritual <ChevronDown size={15} /></button>
         <Link href="/collections/sleep-hygiene">Sleep</Link>

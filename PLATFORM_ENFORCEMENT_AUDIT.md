@@ -36,3 +36,18 @@ The storefront already publishes `hello@wenestwell.com` for general corresponden
 On 2026-08-29, the development storefront was read back in a browser after the factual trust implementation. The homepage now includes a visible **Shop with clarity** section linking customers to `support@wenestwell.com`, the public customer-correspondence address at 14-3650 Langstaff Rd Unit #818, Woodbridge, Ontario L4L 9A8, Canada, and the live Shipping, Returns, Privacy, and Terms pages. It also states that delivery options, taxes, and final total are shown before payment. The public About page now presents the same customer-contact and correspondence facts, while retaining the explicit no-personal-phone position.
 
 The product-detail experience now includes an honest **Share product feedback** disclosure. It requests feedback only from a Nestwell purchaser, routes it to the support inbox with the product title in the email subject, and explicitly states that feedback is not represented as a verified customer review unless tied to a Nestwell order. No rating, testimonial, external marketplace review, review incentive, or supplier-review import was added.
+
+## Customer-care and trust route verification
+
+The complete public customer-care route set was rendered after the implementation: Contact, Shipping & Delivery, Returns & Refunds, Privacy, and Terms of Service. Each route loaded with the primary navigation and the customer-care footer links available. The copy remains consistent with the currently verified Canadian delivery configuration and does not announce U.K. or Australian shipping before Shopify delivery zones are saved.
+
+| Surface | Current factual implementation | Remaining evidence gap |
+| --- | --- | --- |
+| Contact | Support email, general email, and public customer-correspondence address are directly visible. | A dedicated business telephone number has not been provided or approved for public use. |
+| Shipping | Processing, delivery estimate, CAD $12 standard shipping, CAD $75 free-shipping threshold, tracking, and support escalation are visible for Canada. | Owner-approved U.S./U.K./Australia rates remain unsaved in Shopify. |
+| Returns | Damaged, defective, or incorrect-item route, 30-day contact window, resolution criteria, and refund timing are visible. | Direct comparison with saved Shopify policy text remains pending. |
+| Privacy and terms | Store operation, service-provider, support, price, availability, and checkout disclosures are visible. | Direct comparison with saved Shopify policy text remains pending. |
+| Checkout and trust | The storefront discloses that delivery options, taxes, and final total appear before payment and labels the checkout handoff as secure. | Payment-method marks must only be added after their availability is directly confirmed in checkout. |
+| Reviews | Authentic purchaser feedback is collected through the product-level support path and the live post-fulfillment lifecycle flow. | A verified review provider and actual Nestwell customer reviews are required before public review cards, ratings, or testimonials may be shown. |
+
+These improvements are genuine storefront and customer-service implementations. They can support a later evidence-led account review, but they do not by themselves establish the cause of, or resolve, Google’s Misrepresentation restriction or Meta’s account-integrity restriction.

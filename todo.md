@@ -193,9 +193,9 @@
 - [x] Update favicon, social metadata, project logo, and any remaining logo references to the supplied Nestwell asset.
 - [x] Run automated tests, responsive visual QA, and publish a checkpoint for the logo update.
 
-- [ ] Audit the current Google Merchant Center and Meta enforcement notices, account status, and appeal eligibility without submitting an appeal, review, campaign, or spend action.
-- [ ] Compare the live Nestwell About, Contact, footer, shipping, returns, privacy, and terms pages against factual platform trust requirements and recorded account facts.
-- [ ] Define a truthful customer-feedback collection path; do not import, relabel, or display AliExpress/supplier reviews as Nestwell customer reviews.
+- [x] Audit the current Google Merchant Center and Meta enforcement notices, account status, and appeal eligibility without submitting an appeal, review, campaign, or spend action.
+- [x] Compare the live Nestwell About, Contact, footer, shipping, returns, privacy, and terms pages against factual platform trust requirements and recorded account facts.
+- [x] Define a truthful customer-feedback collection path; do not import, relabel, or display AliExpress/supplier reviews as Nestwell customer reviews.
 - [ ] Verify whether a dedicated non-personal business phone number exists before publishing any telephone contact; preserve the no-personal-number rule until then.
 - [ ] Verify the live HTTPS/certificate state, customer-visible checkout security cues, factual payment/trust marks, and Merchant Center business-detail consistency.
 - [ ] Prepare evidence-led Google and Meta remediation recommendations without filing any appeal or spending money until the owner gives fresh, platform-specific approval.

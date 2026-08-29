@@ -6,12 +6,14 @@ import { trpc } from "@/lib/trpc";
 import { useSeo } from "@/hooks/useSeo";
 import { buildProductFaqs, extractProductSpecs } from "@shared/productFacts";
 import { Check, ChevronDown, Minus, Plus, ShieldCheck, Truck, ZoomIn } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useRoute } from "wouter";
 import { RestockAlert } from "@/components/LifecycleCapture";
 import { trackViewedProduct } from "@/lib/klaviyo";
 
 function variantFor(product: Product, choices: Record<string, string>) { return product.variants.find(variant => product.options.every(option => variant.selectedOptions.some(selected => selected.name === option.name && selected.value === choices[option.name]))); }
+
+export function ProductFeedback({ productTitle }: { productTitle: string }) { return <details><summary>Share product feedback <ChevronDown size={18}/></summary><p>If you purchased this item from Nestwell, we welcome your honest feedback. Email our support team with your order number and a brief note about your experience. Feedback is not presented as a verified customer review unless it can be tied to a Nestwell order.</p><a className="policy-email" href={`mailto:support@wenestwell.com?subject=${encodeURIComponent(`Nestwell product feedback: ${productTitle}`)}`}>Share feedback with Nestwell</a></details>; }
 
 export default function ProductPage() {
   const [, params] = useRoute("/products/:handle");
@@ -42,7 +44,7 @@ export default function ProductPage() {
         <div className="product-trust"><span><Truck size={17}/><b>Checkout-ready</b> Live variant availability</span><span><ShieldCheck size={17}/><b>Shop securely</b> Protected checkout</span></div>
       </div></section>
     <TrustStrip />
-    <section className="product-detail-section"><div><span className="eyebrow">The details</span><h2>Made for the<br/><i>way you live.</i></h2><p>{productSummary(product)}</p></div><div className="detail-panels"><details open><summary>Specifications <ChevronDown size={18}/></summary><dl>{specs.map(spec => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></details>{faqs.map((faq, index) => <details key={faq.question} open={index === 0}><summary>{faq.question} <ChevronDown size={18}/></summary><p>{faq.answer}</p></details>)}<details><summary>Shipping and checkout <ChevronDown size={18}/></summary><p>Final delivery options, taxes, and timing are confirmed securely before you complete your order.</p></details></div></section>
+    <section className="product-detail-section"><div><span className="eyebrow">The details</span><h2>Made for the<br/><i>way you live.</i></h2><p>{productSummary(product)}</p></div><div className="detail-panels"><details open><summary>Specifications <ChevronDown size={18}/></summary><dl>{specs.map(spec => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></details>{faqs.map((faq, index) => <details key={faq.question} open={index === 0}><summary>{faq.question} <ChevronDown size={18}/></summary><p>{faq.answer}</p></details>)}<details><summary>Shipping and checkout <ChevronDown size={18}/></summary><p>Final delivery options, taxes, and timing are confirmed securely before you complete your order.</p></details><ProductFeedback productTitle={product.title}/></div></section>
     {related.length ? <section className="section related-section"><div className="section-head section-head-row"><div><span className="eyebrow">Continue exploring</span><h2>More in <i>{product.category}</i></h2></div><Link href={`/collections/${product.category.toLowerCase().replaceAll(" & ", "-").replaceAll(" ", "-")}`} className="text-button">View collection <ChevronDown size={16}/></Link></div><div className="product-rail">{related.map((item: Product) => <ProductCard product={item} key={item.id}/>)}</div></section> : null}
   </main><Footer/></div>;
 }

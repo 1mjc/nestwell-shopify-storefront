@@ -51,3 +51,7 @@ The complete public customer-care route set was rendered after the implementatio
 | Reviews | Authentic purchaser feedback is collected through the product-level support path and the live post-fulfillment lifecycle flow. | A verified review provider and actual Nestwell customer reviews are required before public review cards, ratings, or testimonials may be shown. |
 
 These improvements are genuine storefront and customer-service implementations. They can support a later evidence-led account review, but they do not by themselves establish the cause of, or resolve, Google’s Misrepresentation restriction or Meta’s account-integrity restriction.
+
+## Public HTTPS verification
+
+On 2026-08-29, the public storefront loaded successfully at `https://wenestwell.com/` in the connected browser. The rendered homepage visibly includes the Shop with clarity section, support email, customer-correspondence address, policy links, CAD $75 Canada shipping statement, and secure-checkout guidance. This confirms that the current public site is served over HTTPS and exposes the implemented trust surfaces. It does not independently verify payment-method availability or an end-to-end completed checkout transaction.

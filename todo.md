@@ -202,3 +202,6 @@
 - [x] Implement a visible, factual trust-and-transparency section that summarizes customer support, the verified correspondence address, secure checkout, and policy access without inventing badges or reviews.
 - [x] Add a truthful post-purchase review-collection path that asks verified Nestwell customers for feedback without importing or presenting supplier/AliExpress reviews as Nestwell reviews.
 - [ ] Improve customer-facing shipping and checkout guidance using only the currently configured Shopify delivery coverage; do not announce United Kingdom or Australia service before those zones are saved.
+- [x] Audit the existing header, cart, product, policy, and footer trust indicators before introducing storewide factual badge components.
+- [x] Add consistent factual trust badges and policy/support links across the homepage, product pages, cart, and customer-care routes without using unverified certifications, reviews, payment marks, or platform endorsements.
+- [x] Add regression coverage and responsive QA for the factual trust badges, then publish the implementation checkpoint.
